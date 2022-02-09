@@ -1,0 +1,25 @@
+# This action rebuilds the docs whenever there is a change (push),
+# and deplys it automatically on GitHub pages (the branch gh-pages).
+#
+name: Build and Deploy GitHub Pages
+on:
+  push:
+    branches:
+      - main-disabled     # Remove '-disabled' to activate this action
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: '16'
+
+      - run: npm install
+      - run: npx antora build.yml --to-dir=html --url=https://brl-cad.github.io/docs
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.2.3
+        with:
+          branch: gh-pages    # The branch the action should deploy to.
+          folder: html        # The folder the action should deploy.
