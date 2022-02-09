@@ -19,7 +19,7 @@ jobs:
       - run: npx antora build.yml --to-dir=html --url=https://brl-cad.github.io/docs
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.2.3
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
           branch: gh-pages    # The branch the action should deploy to.
           folder: html        # The folder the action should deploy.
