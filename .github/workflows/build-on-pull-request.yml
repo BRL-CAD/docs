@@ -1,0 +1,21 @@
+# The idea of this action is to be executed on a pull request,
+# in order to check automatically that the proposed changes
+# do not break anything.
+# However we don't have a way for testing antora files yet.
+#
+name: Build GitHub Pages
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ opened, edited, synchronize, reopened, ready_for_review ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version: '16'
+
+      - run: npm install
+      - run: npx antora build.yml --to-dir=html --log-failure-level=error    # report failure if there is any error
