@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lecciones MGED :: BRL-CAD Documentation</title>
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="mged/01_crear_figuras_primitivas.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../ui/css/site.css">
+    <link rel="stylesheet" href="../../ui/css/custom.css">
+    <script>var uiRootPath = '../../ui'</script>
+    <link rel="icon" href="../../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="es">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lecciones</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/01_crear_figuras_primitivas.html">1. Crear Figuras Primitivas with MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/02_opciones_vistas.html">2. Reconocer las opciones de vistas en MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/03_utilizar_comando_in.html">3. Usar el comando Insert en MGED para dimensionar y ubicar figuras</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/04_prop_materiales.html">4. Asignación de propiedades de los materiales y trazado de rayos (Raytracing) en MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/05_expresiones_booleanas.html">5. Expresiones Booleanas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/06_crear_una_copa.html">6. Crear una copa</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/07_prop_materiales_copa.html">7. Asignar propiedades de los materiales a una copa</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/08_prop_materiales_copa2.html">8. Asignar más propiedades de los materiales a la copa</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/09_esfera_en_caja_exhibidora.html">9. Crear una esfera en una caja exhibidora transparente</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/10_crear_taza.html">10. Crear una taza</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/11_refinar_taza.html">11. Refinando el modelo de la taza</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/12_taza_desde_gui.html">12. Crear el modelo de una taza utilizando la interfaz de MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/13_ubicar_figuras_en_3d.html">13. Ubicar figuras en espacios 3-D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/14_ubicar_figuras_en_3d_2.html">14. Ejercicios adicionales de ubicación de imágenes en espacios 3-D</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/15_crear_camion_de_juguete.html">15. Crear un camión de juguete</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mged/16_mod_tech_struct.html">16. Aprender técnicas de modelado y estructuras</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">es</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../../hy/index.html">hy</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">es</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Spanish</a></li>
+    <li>Lecciones</li>
+    <li><a href="mged.html">MGED</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/translations/es/modules/lecciones/pages/mged.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Lecciones MGED</h1>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="mged/01_crear_figuras_primitivas.html" class="xref page">1. Crear Figuras Primitivas with MGED</a></p>
+</li>
+<li>
+<p><a href="mged/02_opciones_vistas.html" class="xref page">2. Reconocer las opciones de vistas en MGED</a></p>
+</li>
+<li>
+<p><a href="mged/03_utilizar_comando_in.html" class="xref page">3. Usar el comando Insert en MGED para dimensionar y ubicar figuras</a></p>
+</li>
+<li>
+<p><a href="mged/04_prop_materiales.html" class="xref page">4. Asignación de propiedades de los materiales y trazado de rayos (Raytracing) en MGED</a></p>
+</li>
+<li>
+<p><a href="mged/05_expresiones_booleanas.html" class="xref page">5. Expresiones Booleanas</a></p>
+</li>
+<li>
+<p><a href="mged/06_crear_una_copa.html" class="xref page">6. Crear una copa</a></p>
+</li>
+<li>
+<p><a href="mged/07_prop_materiales_copa.html" class="xref page">7. Asignar propiedades de los materiales a una copa</a></p>
+</li>
+<li>
+<p><a href="mged/08_prop_materiales_copa2.html" class="xref page">8. Asignar más propiedades de los materiales a la copa</a></p>
+</li>
+<li>
+<p><a href="mged/09_esfera_en_caja_exhibidora.html" class="xref page">9. Crear una esfera en una caja exhibidora transparente</a></p>
+</li>
+<li>
+<p><a href="mged/10_crear_taza.html" class="xref page">10. Crear una taza</a></p>
+</li>
+<li>
+<p><a href="mged/11_refinar_taza.html" class="xref page">11. Refinando el modelo de la taza</a></p>
+</li>
+<li>
+<p><a href="mged/12_taza_desde_gui.html" class="xref page">12. Crear el modelo de una taza utilizando la interfaz de MGED</a></p>
+</li>
+<li>
+<p><a href="mged/13_ubicar_figuras_en_3d.html" class="xref page">13. Ubicar figuras en espacios 3-D</a></p>
+</li>
+<li>
+<p><a href="mged/14_ubicar_figuras_en_3d_2.html" class="xref page">14. Ejercicios adicionales de ubicación de imágenes en espacios 3-D</a></p>
+</li>
+<li>
+<p><a href="mged/15_crear_camion_de_juguete.html" class="xref page">15. Crear un camión de juguete</a></p>
+</li>
+<li>
+<p><a href="mged/16_mod_tech_struct.html" class="xref page">16. Aprender técnicas de modelado y estructuras</a></p>
+</li>
+</ul>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../index.html">Spanish</a></span>
+  <span class="next"><a href="mged/01_crear_figuras_primitivas.html">1. Crear Figuras Primitivas with MGED</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../ui/js/site.js"></script>
+<script async src="../../ui/js/vendor/highlight.js"></script>
+<script src="../../ui/js/vendor/lunr.js"></script>
+<script src="../../ui/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../ui/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+
+<script async src="../../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>

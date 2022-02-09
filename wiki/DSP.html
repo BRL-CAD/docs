@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Displacement (DSP) map primitive :: BRL-CAD Documentation</title>
+    <link rel="canonical" href="https://brl-cad.github.io/docs/wiki/DSP.html">
+    <link rel="prev" href="Distributed_Rendering.html">
+    <link rel="next" href="EBM.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../ui/css/site.css">
+    <link rel="stylesheet" href="../ui/css/custom.css">
+    <script>var uiRootPath = '../ui'</script>
+    <link rel="icon" href="../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-pawn.html">Modeling Pawn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-rook.html">Modeling Rook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-king.html">Modeling King</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-queen.html">Modeling Queen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-bishop.html">Modeling Bishop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-knight.html">Modeling Knight</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-chessboard.html">Modeling the Chess Set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lessons</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lessons/mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/01_creating_primitive_shapes.html">1. Creating Primitive Shapes in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/02_learning_viewing_options.html">2. Learning Viewing Options in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/03_using_insert_command.html">3. Using the Insert Command in MGED to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/04_assign_mat_prop_rt.html">4. Assigning Material Properties and Raytracing in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/05_learning_boolean_expressions.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/06_creating_a_goblet.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/07_goblet_material_properties.html">7. Assigning Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/08_goblet_material_properties2.html">8. Assigning More Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/09_globe_in_display_box.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/10_creating_mug.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/11_refining_mug.html">11. Refining a Mug Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/12_mug_through_gui.html">12. Creating a Mug Model using the MGED Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/13_placing_shapes_in_3d.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/14_placing_shapes_in_3d_2.html">14. Additional Exercises Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/15_creating_a_toy_truck.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/16_mod_tech_struct.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Books</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hacking/index.html">Hacking BRL-CAD</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter1.html">A Call to Arms (and Contributors)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter2.html">Feature Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter3.html">Working with Our Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter4.html">What Code to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter5.html">Contributing Code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documenters</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter6.html">Working with Our Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter7.html">Types of Documentation We Maintain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter8.html">What Documentation to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter9.html">Contributing Documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other Contributors</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part4/chapter10.html">You Can Help Too</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix: Resources and Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix1.html">Further References and Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix2.html">AsciiDoc Examples</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix3.html">Code Example: Shooting Rays</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix4.html">Code Example: Walking Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix5.html">Code Example: Command Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix6.html">Example Code: Root Solving</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/overview.html">I. An Overview of BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/mged-intro.html">II. Introduction to MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface1.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface2.html">Acknowledgments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter1.html">1. Creating Primitive Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter2.html">2. Learning the Viewing Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter3.html">3. Using the Insert Command to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter4.html">4. Assigning Material Properties and Raytracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter5.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter6.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter7.html">7. Assigning Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter8.html">8. Assigning More Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter9.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter10.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter11.html">11. Refining the Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter12.html">12. Creating the Mug Through the GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter13.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter14.html">14. Gaining More Practice Placing Shapes in Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter15.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter16.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/appendix1.html"><code class="app">MGED</code> Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/modeling.html">III. Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter2.html">2. The Model Process</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter3.html">3. Measuring data</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter4.html">4. Organizing the Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter5.html">5. Developing Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter6.html">5. Evaluating Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter7.html">7. Logging Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix1.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix2.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix3.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix4.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix5.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix6.html">Using the build_region Command</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/converting.html">IV. Converting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter2.html">2. Pertinent Characteristics of the BRL-CAD Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter3.html">3. Converting From/to ASCII</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter4.html">4. Converting to BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter5.html">5. Converting From BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter6.html">6. Building a New Converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter7.html">7. Postconversion Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/index.html">Articles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_pattern.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_region.html">Using the build_region Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/camo_shader.html">Camouflage shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ebm_primitive.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/gcv.html">The Geometry Conversion Library</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ged.html">GED: An Interactive Solid Modeling System</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/mged/index.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tutorial.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/gui.html">Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/command-line-editing.html">Command Line Editing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/user-commands.html">User Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/developer-commands.html">Developer Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tcl-variables.html">Tcl Variables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/env.html">Environment Variable</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/callback.html">Callback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/brlcad-solid.html">BRL-CAD Solid</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/mgedrc.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/nirt.html">Interactive Raytracing: The nirt Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/overlap_tool.html">The Overlap Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/oed.html">Object Editing - the oed Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/pipes.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/projection_shader.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/tire.html">Vehicle Tire and Wheel Creation in BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/TEMPLATE.html">TEMPLATE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Dev Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../devguides/bool_eval_development.html">NURBS Boolean Evaluation Development Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../presentations/index.html">Presentations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/brlcad-app-devel.html">Application Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/intro-to-tcltk.html">Introduction to Tcl/Tk</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../specifications/BRL_CAD_g_format_V5.html">BRL-CAD Database Format</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manual Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/1.html">man1</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/3.html">man3</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/5.html">man5</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/n.html">mann</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wiki Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Main_page.html">Main Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="all-pages.html">All Pages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Animation.html">Animation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Annot.html">Annotations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Cutting_and_Pasting_PIX_files.html">Cutting and Pasting Pix Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Distributed_Rendering.html">Distributed Rendering</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="DSP.html">Displacement (DSP) map primitive</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="EBM.html">Inserting an <em>ebm</em> shape in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Extrude.html">Extrude</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Lighting.html">Lighting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="MGED_CMD_simulate.html">MGED CMD simulate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="NMG.html">Non-Manifold Geometry (NMG)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="SGI_Cube.html">SGI Cube</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Sketch.html">Sketch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Spiral.html">Spiral</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Blender_to_CAD.html">Blender to CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Mug.html">Mug Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Newbie.html">BRL-CAD for Newbies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Shaders.html">Shaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling.html">Compiling BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse.html">Compiling BRL-CAD with Eclipse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse_Manually.html">Compile BRL-CAD with Eclipse Manually</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_XCode.html">Compiling BRL-CAD with Xcode on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Code examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Hallo_World_Example.html">CoreInterface Hallo World Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_PrintTitle_Example.html">CoreInterface PrintTitle Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Tree_Walker_Example.html">CoreInterface Tree Walker Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_Application.html">Example application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_db_walk_tree.html">Example DB walk tree</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Burst.html">Burst</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Doxygen.html">BRL-CAD and Doxygen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Early_Raytracing_History.html">Early Raytracing History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV.html">Online Geometry Viewer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV_on_FreeBSD.html">OGV on FreeBSD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Patches.html">How to create, edit or apply a patch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Povray.html">Povray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ProE-BRL.html">ProE-BRL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Ronja.html">BRL-CAD Customer Profile: Ronja</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../hy/index.html">hy</a>
+        </li>
+        <li class="version">
+          <a href="../es/index.html">es</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BRL-CAD</a></li>
+    <li>Wiki Pages</li>
+    <li>Tutorials</li>
+    <li><a href="DSP.html">Displacement (DSP) map primitive</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/wiki/modules/wiki/pages/DSP.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Displacement (DSP) map primitive</h1>
+<div class="sect1">
+<h2 id="_creating_a_dsp_object_from_miscellaneous_images"><a class="anchor" href="#_creating_a_dsp_object_from_miscellaneous_images"></a>1. Creating a DSP object from miscellaneous images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We will use two examples to illustrate the next few sections.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A black and white (gray scale) image (png format):</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex1.png" alt="Image:Ex1.png">
+</div>
+</div>
+<div class="paragraph">
+<p>with properties:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ file Ex1.png
+Ex1.png: PNG image, 142 x 150, 8-bit gray+alpha, non-interlaced</pre>
+</div>
+</div>
+</li>
+<li>
+<p>A color png file:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex2.png" alt="Image:Ex2.png">
+</div>
+</div>
+<div class="paragraph">
+<p>with properties:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ file Ex2.png
+Ex2.png: PNG image, 152 x 150, 8-bit/color RGBA, non-interlaced</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_preparing_your_height_field_data"><a class="anchor" href="#_preparing_your_height_field_data"></a>1.1. Preparing your height field data</h3>
+<div class="paragraph">
+<p>The DSP takes unsigned short (16-bit) integer data. Our various
+command-line data converters can help bring data in from pretty much
+any existing format, including image data, via various processing
+commands.  If the data were in png image format, for example (which is
+basically 3-channel 8-bit integer data), the data could be prepared
+with a combination of 'png-pix', 'pix-bw', and 'cv'.</p>
+</div>
+<div class="paragraph">
+<p>If you type the 'in' command, it will prompt you for each parameter
+individually and that should help some. For the DSP, the main
+parameters are: the source of the height data, the width (number of
+points in the X direction) and length (number of points in the Y
+direction) of the input data, width/length/height scaling factors, and
+whether to smoothly interpolate between cells (0 = do not interpolate,
+1 = interpolate).</p>
+</div>
+<div class="paragraph">
+<p>See the 'dsp_add' tool for combining two existing DSP data files into
+one.</p>
+</div>
+<div class="paragraph">
+<p>A DSP primitive is an array of cells initially defined by points in
+the X-Y plane as positive heights from Z = 0. The DSP can then be
+transformed to other orientations and positions. The number of cells
+is (numX * numY).</p>
+</div>
+<div class="paragraph">
+<p>The data format for the DSP primitive is network-ordered unsigned
+short integers (nu16). BRL-CAD has a couple of dozen tools that you
+can use for converting existing data into that raw format, such as the
+'cv' command or the 'bw-d' and 'd-u' commands among other similar tool
+chains. If you use the cv command, the output format is "nus" for
+network unsigned shorts.</p>
+</div>
+<div class="paragraph">
+<p>Using the two examples to convert the data to dsp format.</p>
+</div>
+<div class="paragraph">
+<p>Example 1.</p>
+</div>
+<div class="paragraph">
+<p>Convert it to a bw file (one pixel is one unsigned char):</p>
+</div>
+<div class="paragraph">
+<p><code>$ png-bw Ex1.png &gt; Ex1.bw</code></p>
+</div>
+<div class="paragraph">
+<p>View the result:</p>
+</div>
+<div class="paragraph">
+<p><code>$ bw-fb -w142 -n150 Ex1.bw</code></p>
+</div>
+<div class="paragraph">
+<p>Convert it to the format required for a dsp file (nu16):</p>
+</div>
+<div class="paragraph">
+<p><code>$ cv huc nu16 Ex1.bw Ex1.dsp</code></p>
+</div>
+<div class="paragraph">
+<p>Example 2.</p>
+</div>
+<div class="paragraph">
+<p>Convert it to a pix file (one pixel is defined by three unsigned
+chars):</p>
+</div>
+<div class="paragraph">
+<p><code>$ png-pix Ex2.png &gt; Ex2.pix</code></p>
+</div>
+<div class="paragraph">
+<p>View the result:</p>
+</div>
+<div class="paragraph">
+<p><code>$ pix-fb -w152 -n150 Ex2.pix</code></p>
+</div>
+<div class="paragraph">
+<p>Convert it to a bw file (one pixel is one unsigned char):</p>
+</div>
+<div class="paragraph">
+<p><code>$ pix-bw Ex2.pix &gt; Ex2.bw</code></p>
+</div>
+<div class="paragraph">
+<p>View the result:</p>
+</div>
+<div class="paragraph">
+<p><code>$ bw-fb -w152 -n150 Ex2.bw</code></p>
+</div>
+<div class="paragraph">
+<p>Convert it to the format required for a dsp file:</p>
+</div>
+<div class="paragraph">
+<p><code>$ cv huc nu16 Ex2.bw Ex2.dsp</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_importing_dsp_data_into_a_g_file"><a class="anchor" href="#_importing_dsp_data_into_a_g_file"></a>1.2. Importing DSP data into a .g file</h3>
+<div class="paragraph">
+<p>Example 1.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="../man/1/mged.html" class="xref page">mged</a> create a dsp object of width 142, length
+150, no interpolation, cut direction 'ad', cell size 1 (in current
+units), and unit elevation 0.005 (in current units):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mged&gt; in dsp1.s dsp f Ex1.dsp 142 150 0 ad 1 0.005
+mged&gt; r dsp1.r u dsp1.s</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example 2.</p>
+</div>
+<div class="paragraph">
+<p>In mged create a dsp object:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mged&gt; in dsp2.s dsp f Ex2.dsp 152 150 0 ad 1 0.005
+mged&gt; r dsp2.r u dsp2.s</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_your_dsp"><a class="anchor" href="#_rendering_your_dsp"></a>1.3. Rendering your DSP</h3>
+<div class="paragraph">
+<p>Example 1.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mged&gt; B dsp1.r
+mged&gt; ae 270 90
+mged&gt; rt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex1rt.png" alt="Image:Ex1rt.png">
+</div>
+</div>
+<div class="paragraph">
+<p>You can play around with the scaling factors (the end pair: 1 - cell
+width, 0.005 - cell height) to improve the looks of the image.</p>
+</div>
+<div class="paragraph">
+<p>But now let&#8217;s invert the file so we get its negative:</p>
+</div>
+<div class="paragraph">
+<p><code>$ bwmod -m-1 -a255 &lt; Ex1.bw &gt; Ex1n.bw</code></p>
+</div>
+<div class="paragraph">
+<p>And make another dsp in the same manner as before:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cv huc nu16 Ex1n.bw Ex1n.dsp
+$ ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And see the results:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex1nrt.png" alt="Image:Ex1nrt.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Example 2.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mged&gt; B dsp2.r
+mged&gt; ae 270 90
+mged&gt; rt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex2rt.png" alt="Image:Ex2rt.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Again, you could play with various parameters to get the desired look.
+You could also create the negative as we did with example 1 and see
+the results:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Ex2nrt.png" alt="Image:Ex2nrt.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_dsp_object_from_manual_or_programmatic_generation_of_data"><a class="anchor" href="#_creating_a_dsp_object_from_manual_or_programmatic_generation_of_data"></a>2. Creating a DSP object from manual or programmatic generation of data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A DSP object can be created manually or programmatically by creating
+an ASCII data file as input using the BRL-CAD utility asc2dsp to
+convert it directly to the DSP binary format. An easy way to create
+the input file for asc2dsp is to first create it row by row in natural
+form with the top row being the desired top row and so on in desired
+viewing order.  Then take the finished file and filter it through the
+Unix utility tac which will reverse the order of the rows (lines).</p>
+</div>
+<div class="sect2">
+<h3 id="_a_simple_example"><a class="anchor" href="#_a_simple_example"></a>2.1. A simple example</h3>
+<div class="paragraph">
+<p>For example, let&#8217;s create the letter "T" for viewing in the X-Y plane.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cat t-normal.asc
+1 1 1 1 1
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now reverse the file:</p>
+</div>
+<div class="paragraph">
+<p><code>$ tac t-normal.asc &gt; t-reversed.asc</code></p>
+</div>
+<div class="paragraph">
+<p>and see the result in perfect form for asc2dsp:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cat t-reversed.asc
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0
+0 0 1 0 0
+1 1 1 1 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, create the dsp file:</p>
+</div>
+<div class="paragraph">
+<p><code>$ asc2dsp t-reversed.asc t.dsp</code></p>
+</div>
+<div class="paragraph">
+<p>(The TGM creation is left as an exercise for the reader.)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_practical_example"><a class="anchor" href="#_a_practical_example"></a>2.2. A practical example</h3>
+<div class="paragraph">
+<p>Now let&#8217;s consider a more practical example and a real test of
+BRL-CAD.  We can import topological (topo) data and produce a
+realistic ground surface. There are many free sources of such data,
+but these, for US topo data, seem to be the most likely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://nationalmap.gov/viewer.html/" class="bare">http://nationalmap.gov/viewer.html/</a></p>
+</li>
+<li>
+<p><a href="http://earthexplorer.usgs.gov/" class="bare">http://earthexplorer.usgs.gov/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Trying to find suitable topo data, in a desired format for a specific
+area, is not so easy there, so we located another source of
+topological data (digital elevation models [DEM]) in
+<a href="http://mcmcweb.er.usgs.gov/sdts/">SDTS</a> format:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://data.geocomm.com/dem/demdownload.html" class="bare">http://data.geocomm.com/dem/demdownload.html</a></p>
+</div>
+<div class="paragraph">
+<p>We selected
+<a href="http://data.geocomm.com/catalog/US/61076/sublist.html">Colorado</a>,
+<a href="http://data.geocomm.com/catalog/US/61076/1231/index.html">El Paso
+County</a>, and
+<a href="http://data.geocomm.com/catalog/US/61076/1231/group4-3.html">Digital
+Elevation Models</a>.</p>
+</div>
+<div class="paragraph">
+<p>On that page we downloaded all six 10-meter data archive files for
+complete coverage of the county. We also downloaded the six *TXT files
+which contain metadata about each archive. [Note that you are required
+to have a Geo Community account for any downloads (membership is
+free).]</p>
+</div>
+<div class="paragraph">
+<p>The six archive files are:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>3818122.DEM.SDTS.TAR.GZ
+4055020.DEM.SDTS.TAR.GZ
+4055026.DEM.SDTS.TAR.GZ
+4055028.DEM.SDTS.TAR.GZ
+4055034.DEM.SDTS.TAR.GZ
+4057865.DEM.SDTS.TAR.GZ</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Taking the first archive as an example:</p>
+</div>
+<div class="paragraph">
+<p><code>$ tar -tvzf 3818122.DEM.SDTS.TAR.GZ</code></p>
+</div>
+<div class="paragraph">
+<p>we see that the archive files are not in a directory (but they are a
+set with possibly redundant file names found in other sets), so we
+create a directory for each:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ mkdir 3818122.dem
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now move each archive into its own directory and unpack it:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ mv 3818122.DEM.SDTS.TAR.GZ 3818122.dem
+$ cd 3818122.dem
+$ tar -xvzf 3818122.DEM.SDTS.TAR.GZ
+3814CATD.DDF
+3814CATS.DDF
+3814CEL0.DDF
+3814DDDF.DDF
+3814DDOM.DDF
+3814DDSH.DDF
+3814DQAA.DDF
+3814DQCG.DDF
+3814DQHL.DDF
+3814DQLC.DDF
+3814DQPA.DDF
+3814IDEN.DDF
+3814IREF.DDF
+3814LDEF.DDF
+3814RSDF.DDF
+3814SPDM.DDF
+3814STAT.DDF
+3814XREF.DDF
+README</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can view the SDTS data files with a free viewer (for Windows only)
+available here:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.visualizationsoftware.com/3dem" class="bare">http://www.visualizationsoftware.com/3dem</a></p>
+</div>
+<div class="paragraph">
+<p>In order to manipulate the data in SDTS files we used the
+<a href="http://gdal.org/">GDAL library</a> and then created a C&#43;&#43; program called
+'sdtsdem2asc' which can be found here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/tbrowder/brlcad-usgs-topo-tools" class="bare">https://github.com/tbrowder/brlcad-usgs-topo-tools</a></p>
+</div>
+<div class="paragraph">
+<p>After building and installing that program, we can change directory to
+the desired data set and create the dsp. We enter the desired base
+name of the image (we choose the unique data set base name) and use
+the '--chop' option to minimize the dsp&#8217;s vertical height to the
+default one meter below the lowest height in the data set. Note the
+program will do all the work for us with the options shown:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cd /path/to/3818122.dem
+$ sdtsdem2asc 3814CATD.DDF --base=3818122 --chop</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting default png file (but cropped) is shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/381822-az35-el25.png" alt="Image:381822-az35-el25.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="Distributed_Rendering.html">Distributed Rendering</a></span>
+  <span class="next"><a href="EBM.html">Inserting an <em>ebm</em> shape in MGED</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../ui/js/site.js"></script>
+<script async src="../ui/js/vendor/highlight.js"></script>
+<script src="../ui/js/vendor/lunr.js"></script>
+<script src="../ui/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../ui/css/search.css"></script>
+<script async src="../search-index.js"></script>
+
+<script async src="../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>

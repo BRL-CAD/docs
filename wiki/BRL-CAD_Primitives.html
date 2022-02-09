@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BRL-CAD Primitives :: BRL-CAD Documentation</title>
+    <link rel="canonical" href="https://brl-cad.github.io/docs/wiki/BRL-CAD_Primitives.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../ui/css/site.css">
+    <link rel="stylesheet" href="../ui/css/custom.css">
+    <script>var uiRootPath = '../ui'</script>
+    <link rel="icon" href="../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-pawn.html">Modeling Pawn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-rook.html">Modeling Rook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-king.html">Modeling King</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-queen.html">Modeling Queen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-bishop.html">Modeling Bishop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-knight.html">Modeling Knight</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-chessboard.html">Modeling the Chess Set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lessons</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lessons/mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/01_creating_primitive_shapes.html">1. Creating Primitive Shapes in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/02_learning_viewing_options.html">2. Learning Viewing Options in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/03_using_insert_command.html">3. Using the Insert Command in MGED to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/04_assign_mat_prop_rt.html">4. Assigning Material Properties and Raytracing in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/05_learning_boolean_expressions.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/06_creating_a_goblet.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/07_goblet_material_properties.html">7. Assigning Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/08_goblet_material_properties2.html">8. Assigning More Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/09_globe_in_display_box.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/10_creating_mug.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/11_refining_mug.html">11. Refining a Mug Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/12_mug_through_gui.html">12. Creating a Mug Model using the MGED Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/13_placing_shapes_in_3d.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/14_placing_shapes_in_3d_2.html">14. Additional Exercises Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/15_creating_a_toy_truck.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/16_mod_tech_struct.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Books</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hacking/index.html">Hacking BRL-CAD</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter1.html">A Call to Arms (and Contributors)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter2.html">Feature Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter3.html">Working with Our Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter4.html">What Code to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter5.html">Contributing Code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documenters</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter6.html">Working with Our Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter7.html">Types of Documentation We Maintain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter8.html">What Documentation to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter9.html">Contributing Documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other Contributors</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part4/chapter10.html">You Can Help Too</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix: Resources and Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix1.html">Further References and Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix2.html">AsciiDoc Examples</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix3.html">Code Example: Shooting Rays</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix4.html">Code Example: Walking Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix5.html">Code Example: Command Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix6.html">Example Code: Root Solving</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/overview.html">I. An Overview of BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/mged-intro.html">II. Introduction to MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface1.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface2.html">Acknowledgments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter1.html">1. Creating Primitive Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter2.html">2. Learning the Viewing Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter3.html">3. Using the Insert Command to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter4.html">4. Assigning Material Properties and Raytracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter5.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter6.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter7.html">7. Assigning Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter8.html">8. Assigning More Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter9.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter10.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter11.html">11. Refining the Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter12.html">12. Creating the Mug Through the GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter13.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter14.html">14. Gaining More Practice Placing Shapes in Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter15.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter16.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/appendix1.html"><code class="app">MGED</code> Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/modeling.html">III. Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter2.html">2. The Model Process</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter3.html">3. Measuring data</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter4.html">4. Organizing the Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter5.html">5. Developing Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter6.html">5. Evaluating Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter7.html">7. Logging Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix1.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix2.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix3.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix4.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix5.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix6.html">Using the build_region Command</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/converting.html">IV. Converting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter2.html">2. Pertinent Characteristics of the BRL-CAD Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter3.html">3. Converting From/to ASCII</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter4.html">4. Converting to BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter5.html">5. Converting From BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter6.html">6. Building a New Converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter7.html">7. Postconversion Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/index.html">Articles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_pattern.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_region.html">Using the build_region Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/camo_shader.html">Camouflage shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ebm_primitive.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/gcv.html">The Geometry Conversion Library</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ged.html">GED: An Interactive Solid Modeling System</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/mged/index.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tutorial.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/gui.html">Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/command-line-editing.html">Command Line Editing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/user-commands.html">User Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/developer-commands.html">Developer Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tcl-variables.html">Tcl Variables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/env.html">Environment Variable</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/callback.html">Callback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/brlcad-solid.html">BRL-CAD Solid</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/mgedrc.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/nirt.html">Interactive Raytracing: The nirt Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/overlap_tool.html">The Overlap Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/oed.html">Object Editing - the oed Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/pipes.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/projection_shader.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/tire.html">Vehicle Tire and Wheel Creation in BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/TEMPLATE.html">TEMPLATE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Dev Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../devguides/bool_eval_development.html">NURBS Boolean Evaluation Development Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../presentations/index.html">Presentations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/brlcad-app-devel.html">Application Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/intro-to-tcltk.html">Introduction to Tcl/Tk</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../specifications/BRL_CAD_g_format_V5.html">BRL-CAD Database Format</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manual Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/1.html">man1</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/3.html">man3</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/5.html">man5</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/n.html">mann</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wiki Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Main_page.html">Main Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="all-pages.html">All Pages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Animation.html">Animation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Annot.html">Annotations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Cutting_and_Pasting_PIX_files.html">Cutting and Pasting Pix Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Distributed_Rendering.html">Distributed Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DSP.html">Displacement (DSP) map primitive</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="EBM.html">Inserting an <em>ebm</em> shape in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Extrude.html">Extrude</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Lighting.html">Lighting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="MGED_CMD_simulate.html">MGED CMD simulate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="NMG.html">Non-Manifold Geometry (NMG)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="SGI_Cube.html">SGI Cube</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Sketch.html">Sketch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Spiral.html">Spiral</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Blender_to_CAD.html">Blender to CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Mug.html">Mug Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Newbie.html">BRL-CAD for Newbies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Shaders.html">Shaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling.html">Compiling BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse.html">Compiling BRL-CAD with Eclipse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse_Manually.html">Compile BRL-CAD with Eclipse Manually</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_XCode.html">Compiling BRL-CAD with Xcode on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Code examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Hallo_World_Example.html">CoreInterface Hallo World Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_PrintTitle_Example.html">CoreInterface PrintTitle Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Tree_Walker_Example.html">CoreInterface Tree Walker Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_Application.html">Example application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_db_walk_tree.html">Example DB walk tree</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Burst.html">Burst</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Doxygen.html">BRL-CAD and Doxygen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Early_Raytracing_History.html">Early Raytracing History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV.html">Online Geometry Viewer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV_on_FreeBSD.html">OGV on FreeBSD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Patches.html">How to create, edit or apply a patch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Povray.html">Povray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ProE-BRL.html">ProE-BRL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Ronja.html">BRL-CAD Customer Profile: Ronja</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../hy/index.html">hy</a>
+        </li>
+        <li class="version">
+          <a href="../es/index.html">es</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BRL-CAD</a></li>
+    <li><a href="BRL-CAD_Primitives.html">BRL-CAD Primitives</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/wiki/modules/wiki/pages/BRL-CAD_Primitives.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">BRL-CAD Primitives</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_arbitrary_convex_polyhedra">Arbitrary convex polyhedra</a>
+<ul class="sectlevel2">
+<li><a href="#ARB8_Records">ARB8 Records</a></li>
+<li><a href="#ARBN_Records">ARBN Records</a></li>
+</ul>
+</li>
+<li><a href="#_ellipsoids">Ellipsoids</a>
+<ul class="sectlevel2">
+<li><a href="#_ell">ell</a></li>
+<li><a href="#_sph">sph</a></li>
+<li><a href="#_ellg">ellg</a></li>
+<li><a href="#_ell1">ell1</a></li>
+<li><a href="#_ehy">ehy</a></li>
+<li><a href="#_epa">epa</a></li>
+</ul>
+</li>
+<li><a href="#_cones_and_cylinders">Cones and Cylinders</a>
+<ul class="sectlevel2">
+<li><a href="#_tgc">tgc</a></li>
+<li><a href="#_rcc">rcc</a></li>
+<li><a href="#_rec">rec</a></li>
+<li><a href="#_rhc">rhc</a></li>
+<li><a href="#_rpc">rpc</a></li>
+<li><a href="#_tec">tec</a></li>
+<li><a href="#_trc">trc</a></li>
+</ul>
+</li>
+<li><a href="#_derived_from_2d">derived from 2d</a>
+<ul class="sectlevel2">
+<li><a href="#_extrude">extrude</a></li>
+<li><a href="#_revolve">revolve</a></li>
+<li><a href="#_dsp">dsp</a></li>
+<li><a href="#_ebm">ebm</a></li>
+<li><a href="#_hf">hf</a></li>
+</ul>
+</li>
+<li><a href="#_other_solids">Other solids</a>
+<ul class="sectlevel2">
+<li><a href="#_tor">tor</a></li>
+<li><a href="#_eto">eto</a></li>
+<li><a href="#_part">part</a></li>
+<li><a href="#_nmg">nmg</a></li>
+<li><a href="#_pipe">pipe</a></li>
+<li><a href="#_ars">ars</a></li>
+<li><a href="#_metaball">metaball</a></li>
+<li><a href="#_brep">brep</a></li>
+<li><a href="#_spline">spline</a></li>
+<li><a href="#_vol">vol</a></li>
+<li><a href="#_bot">bot</a></li>
+<li><a href="#_poly">poly</a></li>
+</ul>
+</li>
+<li><a href="#_other">Other</a>
+<ul class="sectlevel2">
+<li><a href="#_sketch">Sketch</a></li>
+<li><a href="#_annot">annot</a></li>
+<li><a href="#_grip">grip</a></li>
+<li><a href="#_half">half</a></li>
+<li><a href="#_binunif">binunif</a></li>
+<li><a href="#_submodel">submodel</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article provides an overview of various types of geometric
+primitive objects that can be added to a BRL-CAD geometry file. The
+shape, size, location and orientation of each such object are defined
+by a set of parameters/properties that are specific to its type, which
+are discussed in the corresponding section below.</p>
+</div>
+<div class="paragraph">
+<p>For general discussions on using MGED to create primitive objects,
+view their properties, and modify or move them, see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="Creating_primitive_objects.html" class="xref page">Creating primitive objects</a></p>
+</li>
+<li>
+<p><a href="Determining_the_properties_of_primitive_objects.html" class="xref page">Determining the properties of primitive objects</a></p>
+</li>
+<li>
+<p><a href="Changing_the_properties_of_primitive_objects.html" class="xref page">Changing the properties of primitive objects</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>also see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="A_Survey_of_Implicit_Constraints_in_Primitives.html" class="xref page">A Survey of Implicit Constraints in Primitives</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arbitrary_convex_polyhedra"><a class="anchor" href="#_arbitrary_convex_polyhedra"></a>Arbitrary convex polyhedra</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An <strong>arbitrary convex polyhedron</strong> (<strong>arb</strong>) is a geometric volume that is
+completely enclosed by a set of 3-dimensional planes. Each has a set
+of straight-edged, flat <strong>faces</strong> outlined by the intersections of those
+planes. The intersection of each pair of planes is a line whose
+intersections with other planes defines a pair of <strong>vertices</strong>. The line
+segment between those two vertices is an <strong>edge</strong> of the polyhedron that
+is shared by two faces. Each vertex is common to an equal number (at
+least three) of faces and edges.</p>
+</div>
+<div class="paragraph">
+<p>For example, a rectangular parallelepiped is enclosed by three
+orthogonal pairs of parallel planes. Their intersections define six
+faces, each with four edges and four vertices. There are a total of 12
+edges (each shared by two faces) and 8 vertices (each shared by three
+faces and three edges).</p>
+</div>
+<div class="paragraph">
+<p>The BRL-CAD geometry file format defines two types of records for such
+polyhedra:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ARB8_Records"><strong>arb8</strong>s</a> are specified by a set of eight vertices.</p>
+</li>
+<li>
+<p><a href="#ARBN_Records"><strong>arbn</strong>s</a> are specified by a set of intersecting
+planes, each defined by four coefficients.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Although any polyhedron can be defined and stored as an arbn, the arb8
+record type is more commonly employed because it is simpler to work
+with and still accommodates most constructive solid geometry
+applications.</p>
+</div>
+<div class="sect2">
+<h3 id="ARB8_Records"><a class="anchor" href="#ARB8_Records"></a>ARB8 Records</h3>
+<div class="paragraph">
+<p>An <strong>arb8</strong> record is specified by a set of eight {X, Y, Z} vertices
+designated V1 through V8, which need not all be unique. BRL-CAD uses
+such records to represent polyhedra having four, five or six faces:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>arb8</strong> shapes have eight unique vertices. They represent hexahedra
+that have six quadrilateral faces sharing eight edges.  In addition to
+simply specifying the {X, Y, Z} coordinates of those vertices, MGED
+provides easier ways to create the following specific types of
+hexahedra:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>3ptarb</strong> shapes represent <strong>right quadrilateral prisms</strong>, which are
+extruded quadrilaterals having parallel ends connected by four
+rectangular sides.</p>
+</li>
+<li>
+<p><strong>box</strong> shapes represent <strong>parallelepipeds</strong>, whose faces comprise
+three pairs of equal parallelograms. Unlike a common box, those faces
+need not be rectangular&#8212;&#8203;if they are, the enclosed volume is a
+rectangular parallelepiped.</p>
+</li>
+<li>
+<p><strong>rpp</strong> shapes represent <strong>rectangular parallelepipeds</strong> (also known
+as <strong>cuboids</strong> and <strong>rectangular prisms</strong>), whose faces comprise three
+pairs of equal rectangles. If one pair of faces are squares, the
+volume is a <strong>square prism</strong>. If all of them are squares, the volume is
+a <strong>cube</strong> (geometrically, there cannot be just two pairs of square
+faces).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>arb7</strong> shapes have seven unique vertices. They represent hexahedra
+that have four quadrilateral and two triangular faces sharing eleven
+edges. They can only be created by specifying the {X, Y, Z}
+coordinates of those vertices.</p>
+</li>
+<li>
+<p><strong>arb6</strong> shapes have six unique vertices. They represent triangular
+<strong>prisms</strong> and <strong>truncated tetrahedra</strong>, which are pentahedra* that have
+two triangular ends connected by three quadrilateral sides sharing
+nine edges. In addition to simply specifying the {X, Y, Z} coordinates
+of their vertices, MGED provides an easier way to create one specific
+type of hexahedron:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>raw</strong> (<strong>right angle wedge</strong>) shapes are <strong>triangular prisms</strong> whose
+ends are parallel to each other. Interestingly enough, they don&#8217;t seem
+to require any right angles. If the ends are perpendicular to the
+connecting edges, the shape is a <strong>right triangular prism</strong> and has
+rectangular sides. Presumably two of the rectangular sides of an
+actual right-angle wedge would also be perpendicular to each other.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>arb5</strong> shapes have five unique vertices. They represent
+<strong>quadrahedra</strong>, which are pentahedra that have a quadrilateral base and
+four triangular sides sharing eight edges. If such a volume has a
+rectangular base it is a <strong>rectangular pyramid</strong>, one with a square base
+is a <strong>square pyramid</strong>.</p>
+</li>
+<li>
+<p><strong>arb4</strong> shapes have four unique vertices. They represent
+<strong>tetrahedra</strong>, which have four triangular faces sharing six edges.  If
+all four triangles are equilateral, the shape is a <strong>regular
+tetrahedron</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ARBN_Records"><a class="anchor" href="#ARBN_Records"></a>ARBN Records</h3>
+<div class="paragraph">
+<p>An <strong>arbn</strong> record is specified by N sets of intersecting planes, each
+defined by four coefficients:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the {X, Y, Z} coefficients of the plane&#8217;s normal vector pointing
+outward from the center of the arbn shape, and</p>
+</li>
+<li>
+<p>the perpendicular distance of that plane from the origin.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As discussed in the
+<a href="Creating_and_editing_arbn_primitives.html" class="xref page">Creating and editing arbn primitives</a> article, BRL-CAD
+uses such primitives to represent polyhedra having any number of
+sides, edges and vertices.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ellipsoids"><a class="anchor" href="#_ellipsoids"></a>Ellipsoids</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ell"><a class="anchor" href="#_ell"></a>ell</h3>
+<div class="paragraph">
+<p>Ellipsoid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>make in form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">V </dt>
+<dd>
+<p>vertex point, at the center</p>
+</dd>
+<dt class="hdlist1">vectors A B C </dt>
+<dd>
+<p>describing the radii of the ellipses; A points
+front, B points right, C points up.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="title">Example:</div>
+<div class="content">
+<pre>in ell.s ell 0 0 0  0 -1 0  1 0 0  0 0 1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sph"><a class="anchor" href="#_sph"></a>sph</h3>
+<div class="paragraph">
+<p>Sphere, special case of the ellipsoid, with vectors A B and C all the
+same magnitude (radius).</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>make in form(ell) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">V </dt>
+<dd>
+<p>vertex point, at the center</p>
+</dd>
+<dt class="hdlist1">radius </dt>
+<dd>
+<p></p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ellg"><a class="anchor" href="#_ellg"></a>ellg</h3>
+<div class="paragraph">
+<p>Special case of ellipsoid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in form(ell)</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>two foci points, and axis length</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ell1"><a class="anchor" href="#_ell1"></a>ell1</h3>
+<div class="paragraph">
+<p>Special case of ellipsoid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(ell) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, vector A, radius of revolution</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ehy"><a class="anchor" href="#_ehy"></a>ehy</h3>
+<div class="paragraph">
+<p>Elliptical hyperboloid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>make in form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, perpendicular vectors Height and (A,r_1) major
+axis, (r_2) magnitude of vector B, (c) apex to asymptotes distance</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_epa"><a class="anchor" href="#_epa"></a>epa</h3>
+<div class="paragraph">
+<p>Elliptical paraboloid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cones_and_cylinders"><a class="anchor" href="#_cones_and_cylinders"></a>Cones and Cylinders</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tgc"><a class="anchor" href="#_tgc"></a>tgc</h3>
+<div class="paragraph">
+<p>Truncated general cone</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, vectors H A B, magnitudes of vectors C D</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rcc"><a class="anchor" href="#_rcc"></a>rcc</h3>
+<div class="paragraph">
+<p>Right circular cylinder, special case of tgc</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(tgc) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, height vector, radius</p>
+</dd>
+</dl>
+</div>
+<div class="literalblock">
+<div class="title">Example:</div>
+<div class="content">
+<pre>in rcc1.s rcc 0 0 0  1 1 1  0.5</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rec"><a class="anchor" href="#_rec"></a>rec</h3>
+<div class="paragraph">
+<p>Right elliptical cylinder, special case of tgc</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(tgc) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, height vector, radius</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rhc"><a class="anchor" href="#_rhc"></a>rhc</h3>
+<div class="paragraph">
+<p>Right hyperbolic cylinder</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, perpendicular vectors for Height and B, (r)
+rectangular half width, (c) apex to asymptote distance,</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rpc"><a class="anchor" href="#_rpc"></a>rpc</h3>
+<div class="paragraph">
+<p>Right parabolic cylinder</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, perpendicular vectors for Height and B, (r)
+rectangular half width</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tec"><a class="anchor" href="#_tec"></a>tec</h3>
+<div class="paragraph">
+<p>Truncated elliptical cone, special case of tgc</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(tgc) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>Vertex, vectors Height, A, B</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trc"><a class="anchor" href="#_trc"></a>trc</h3>
+<div class="paragraph">
+<p>Truncated right circular cone, special case of tgc</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(tgc) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>Vertex, Height vector, radius of base and top</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_derived_from_2d"><a class="anchor" href="#_derived_from_2d"></a>derived from 2d</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_extrude"><a class="anchor" href="#_extrude"></a>extrude</h3>
+<div class="paragraph">
+<p>Extrusion of a 2-d sketch</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(?) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, perpendicular vectors Height A B, sketch, K</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_revolve"><a class="anchor" href="#_revolve"></a>revolve</h3>
+<div class="paragraph">
+<p>Revolution of a 2-d sketch</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, revolution axis, vector in start plane, angle,
+sketch</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dsp"><a class="anchor" href="#_dsp"></a>dsp</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>data type (f|o), datasource, count of length and width,
+interpolation type, cut direction, cell size, unit elevation</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See also <a href="DSP.html" class="xref page">Displacement (DSP) map primitive</a> tutorial.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ebm"><a class="anchor" href="#_ebm"></a>ebm</h3>
+<div class="paragraph">
+<p>extruded bit map</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>filename, width and height in cells, extrusion distance,</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See also <a href="EBM.html" class="xref page">Inserting an <em>ebm</em> shape in MGED</a> tutorial.</p>
+</div>
+<div class="paragraph">
+<p>The extruded bitmap (also referred to as EBM) is a solid based on a
+greyscale bitmap. The bitmap is an array of unsigned char values, see
+bw(5), and is extruded by some distance. The EBM solid requires the
+dimensions of the bitmap file (height and width in bytes), an
+extrusion length, and a transformation matrix to position
+the EBM. Each byte in the bitmap file is treated as the base of a cell
+that is extruded by the specified extrusion length. If the value of
+the byte is non­zero, then that cell is considered solid.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hf"><a class="anchor" href="#_hf"></a>hf</h3>
+<div class="paragraph">
+<p>Height field</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>none?</p>
+</dd>
+<dt class="hdlist1">Status</dt>
+<dd>
+<p>depreciated, use dsp instead</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_solids"><a class="anchor" href="#_other_solids"></a>Other solids</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tor"><a class="anchor" href="#_tor"></a>tor</h3>
+<div class="paragraph">
+<p>Torus</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, normal vector, radius of revolution, tube radius</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eto"><a class="anchor" href="#_eto"></a>eto</h3>
+<div class="paragraph">
+<p>Elliptical torus</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, normal vector, radius of revolution, vector C,
+(r_d) magnitude of semi-minor axis</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_part"><a class="anchor" href="#_part"></a>part</h3>
+<div class="paragraph">
+<p>Conical particle</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>vertex, height vector, radius at v, radius at h</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The particle solid is a lozenge-shaped object defined by a vertex, a
+height vector and radii at both ends. The body of the particle is
+either a cylinder or a truncated cone, depending on the values of the
+radii.  Each end of the particle is a hemisphere of the specified
+radius.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nmg"><a class="anchor" href="#_nmg"></a>nmg</h3>
+<div class="paragraph">
+<p>n-Manifold geometry solid (non-manifold geometry)</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>make create</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pipe"><a class="anchor" href="#_pipe"></a>pipe</h3>
+<div class="paragraph">
+<p>Hollow and solid pipes and wires</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p># points, for each point: location, inner and outer
+diameters, bend radius</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ars"><a class="anchor" href="#_ars"></a>ars</h3>
+<div class="paragraph">
+<p>Arbitrary rectangular solid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make create</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Solids of type 'ars' (Arbitrary Faceted Solids) are defined using
+"waterlines". The following figure consists of a start point, some
+number of intermediate polygons, and an ending point. Each of the
+intermediate polygons have the same number of vertices and the
+vertices are numbered 1 thru N. In addition to the intermediate
+polygons a line will be created that begins at the start point, goes
+through each polygon at its vertex numbered 1, and terminates at the
+end point. This is repeated for each polygon vertex 2 thru N. The
+start point, polygons, and end point are each a "waterline".</p>
+</div>
+<div class="paragraph">
+<p><strong><mark>need an image here to illustrate the concept</mark></strong></p>
+</div>
+<div class="paragraph">
+<p>the ars shape takes the following values as input:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The number of points per waterline (the number of vertices on each
+intermediate polygon)</p>
+</li>
+<li>
+<p>The number of waterlines (the number of intermediate polygons plus
+2)</p>
+</li>
+<li>
+<p>X, Y, and Z for a starting point (the first waterline)</p>
+</li>
+<li>
+<p>for each interior polygon (an intermediate waterline)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>for each point on the polygon</p>
+<div class="ulist">
+<ul>
+<li>
+<p>X, Y, and Z for the point on the polygon</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>X, Y, and Z for an ending point (the last waterline)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>in x.1 ars 4 6 0 0 3 1 1 3 1 -1 3 -1 -1 3 -1 1 3 1 1 1 1 -1 1 -1 -1 1 -1 1 1 1 0 -1 0 -1 -1 -1 0 -1 0 1 -1 1 0 -3 0 -1 -3 -1 0 -3 0 1 -3 0 0 -3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Will produce a square bar with a tapered 1/8 turn twist in the
+middle. Of course, more waterlines in the twist and more points per
+waterline would make the twist smoother.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Example_ars.png" alt="Example ars">
+</div>
+<div class="title">Figure 1. Example ARS</div>
+</div>
+<div class="paragraph">
+<p>The parameters to the above ars command can be dissected as:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">4 </dt>
+<dd>
+<p>number of points per waterline (i.e. intermediate polygons have 4
+vertices)</p>
+</dd>
+<dt class="hdlist1">6 </dt>
+<dd>
+<p>number of waterlines (four intermediate polygons plus the two
+endpoints)</p>
+</dd>
+<dt class="hdlist1">0 0 3 </dt>
+<dd>
+<p>the center of the top end of the bar</p>
+</dd>
+<dt class="hdlist1">1 1 3 1 -1 3 -1 -1 3 -1 1 3 </dt>
+<dd>
+<p>a 2x2 square in the xy plane at z
+offset</p>
+</dd>
+<dt class="hdlist1">3 1 1 1 1 -1 1 -1 -1 1 -1 1 1 </dt>
+<dd>
+<p>a 2x2 square oriented the same as the
+first but at z offset</p>
+</dd>
+<dt class="hdlist1">1 1 0 -1 0 -1 -1 -1 0 -1 0 1 -1 </dt>
+<dd>
+<p>a 2x2 square at a 45 degree
+rotation from the first squares at z offset</p>
+</dd>
+<dt class="hdlist1">-1 1 0 -3 0 -1 -3 -1 0 -3 0 1 -3 </dt>
+<dd>
+<p>a 2x2 square at a 45 degree
+rotation from the first squares at z offset</p>
+</dd>
+<dt class="hdlist1">-3 0 0 -3 </dt>
+<dd>
+<p>the center of the bottom end of the bar</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_metaball"><a class="anchor" href="#_metaball"></a>metaball</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form(*) create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>render method, threshold, number of points, location and
+field strength for each point (and blobbiness/goo factor)</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_brep"><a class="anchor" href="#_brep"></a>brep</h3>
+<div class="paragraph">
+<p>see <a href="https://github.com/BRL-CAD/brlcad-docs/wiki/NURBS" target="_blank" rel="noopener">NURBS</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spline"><a class="anchor" href="#_spline"></a>spline</h3>
+<div class="paragraph">
+<p>surface splines</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>?</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vol"><a class="anchor" href="#_vol"></a>vol</h3>
+<div class="paragraph">
+<p>volume / voxel</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>filename, xyz dimensions of file (in voxels), lower and
+upper threasholds, xyz dimensions of a cell</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The vol solid is defined by a 3-dimensional array of unsigned char
+values. The solid requires a file of these values, the extent of the
+file (in bytes) in each dimension, the size of each cell, and high and
+low thresholds. Any value in the file that is between the thresholds
+(inclusive) represents a solid cell.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bot"><a class="anchor" href="#_bot"></a>bot</h3>
+<div class="paragraph">
+<p>Bag of triangles</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make create (not edit!)</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>number of verticies, number of triangles, mode (1=surface
+2=solid 3=plate), triangle orientation mode (1=unoriented
+2=counter-clockwise 3=clockwise), each vertex, vertex index of each
+triangle</p>
+</dd>
+<dt class="hdlist1">See also</dt>
+<dd>
+<p><a href="BoT.html" class="xref page">BoT</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_poly"><a class="anchor" href="#_poly"></a>poly</h3>
+<div class="paragraph">
+<p>polysolid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>none?</p>
+</dd>
+<dt class="hdlist1">Status</dt>
+<dd>
+<p>depreciated, use bot instead</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other"><a class="anchor" href="#_other"></a>Other</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sketch"><a class="anchor" href="#_sketch"></a>Sketch</h3>
+<div class="paragraph">
+<p>2d outline</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>make form(sketch editor) create</p>
+</dd>
+<dt class="hdlist1">See also</dt>
+<dd>
+<p><a href="Sketch.html" class="xref page">sketch</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_annot"><a class="anchor" href="#_annot"></a>annot</h3>
+<div class="paragraph">
+<p>2D annotation primitive</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in command</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See: <a href="Annot.html" class="xref page">annot</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grip"><a class="anchor" href="#_grip"></a>grip</h3>
+<div class="paragraph">
+<p>Grip&#8201;&#8212;&#8201;support for joints, non-geometric (does not show in rt)</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">C </dt>
+<dd>
+<p>Center</p>
+</dd>
+<dt class="hdlist1">N </dt>
+<dd>
+<p>normal vector</p>
+</dd>
+<dt class="hdlist1">L </dt>
+<dd>
+<p>magnitude</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_half"><a class="anchor" href="#_half"></a>half</h3>
+<div class="paragraph">
+<p>halfspace</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>Normal, distance from origin</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>A half space is the portion of space on one side of a plane. It is
+represented by its boundary (the plane) and its outward-pointing
+normal vector.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_binunif"><a class="anchor" href="#_binunif"></a>binunif</h3>
+<div class="paragraph">
+<p>Uniform-array binary object</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in create (not edit!)</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<p>minor type (fdcsiLCSIL), data file, number of values</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_submodel"><a class="anchor" href="#_submodel"></a>submodel</h3>
+<div class="paragraph">
+<p>Instanced Submodel</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Handled by</dt>
+<dd>
+<p>in make form create</p>
+</dd>
+<dt class="hdlist1">Arguments</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">file</dt>
+<dd>
+<p>File holding the referenced geometry. 0-length if geometry is
+in the same file.</p>
+</dd>
+<dt class="hdlist1">treetop</dt>
+<dd>
+<p>Single name for the geometry to reference. A submodel is a
+reference to another geometry, possibly in a separate file.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<script src="../ui/js/site.js"></script>
+<script async src="../ui/js/vendor/highlight.js"></script>
+<script src="../ui/js/vendor/lunr.js"></script>
+<script src="../ui/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../ui/css/search.css"></script>
+<script async src="../search-index.js"></script>
+
+<script async src="../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MGED FAQ :: BRL-CAD Documentation</title>
+    <link rel="canonical" href="https://brl-cad.github.io/docs/wiki/MgedFAQ.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../ui/css/site.css">
+    <link rel="stylesheet" href="../ui/css/custom.css">
+    <script>var uiRootPath = '../ui'</script>
+    <link rel="icon" href="../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-pawn.html">Modeling Pawn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-rook.html">Modeling Rook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-king.html">Modeling King</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-queen.html">Modeling Queen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-bishop.html">Modeling Bishop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-knight.html">Modeling Knight</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-chessboard.html">Modeling the Chess Set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lessons</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lessons/mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/01_creating_primitive_shapes.html">1. Creating Primitive Shapes in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/02_learning_viewing_options.html">2. Learning Viewing Options in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/03_using_insert_command.html">3. Using the Insert Command in MGED to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/04_assign_mat_prop_rt.html">4. Assigning Material Properties and Raytracing in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/05_learning_boolean_expressions.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/06_creating_a_goblet.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/07_goblet_material_properties.html">7. Assigning Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/08_goblet_material_properties2.html">8. Assigning More Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/09_globe_in_display_box.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/10_creating_mug.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/11_refining_mug.html">11. Refining a Mug Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/12_mug_through_gui.html">12. Creating a Mug Model using the MGED Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/13_placing_shapes_in_3d.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/14_placing_shapes_in_3d_2.html">14. Additional Exercises Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/15_creating_a_toy_truck.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/16_mod_tech_struct.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Books</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hacking/index.html">Hacking BRL-CAD</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter1.html">A Call to Arms (and Contributors)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter2.html">Feature Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter3.html">Working with Our Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter4.html">What Code to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter5.html">Contributing Code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documenters</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter6.html">Working with Our Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter7.html">Types of Documentation We Maintain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter8.html">What Documentation to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter9.html">Contributing Documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other Contributors</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part4/chapter10.html">You Can Help Too</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix: Resources and Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix1.html">Further References and Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix2.html">AsciiDoc Examples</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix3.html">Code Example: Shooting Rays</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix4.html">Code Example: Walking Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix5.html">Code Example: Command Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix6.html">Example Code: Root Solving</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/overview.html">I. An Overview of BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/mged-intro.html">II. Introduction to MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface1.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface2.html">Acknowledgments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter1.html">1. Creating Primitive Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter2.html">2. Learning the Viewing Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter3.html">3. Using the Insert Command to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter4.html">4. Assigning Material Properties and Raytracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter5.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter6.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter7.html">7. Assigning Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter8.html">8. Assigning More Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter9.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter10.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter11.html">11. Refining the Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter12.html">12. Creating the Mug Through the GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter13.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter14.html">14. Gaining More Practice Placing Shapes in Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter15.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter16.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/appendix1.html"><code class="app">MGED</code> Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/modeling.html">III. Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter2.html">2. The Model Process</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter3.html">3. Measuring data</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter4.html">4. Organizing the Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter5.html">5. Developing Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter6.html">5. Evaluating Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter7.html">7. Logging Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix1.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix2.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix3.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix4.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix5.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix6.html">Using the build_region Command</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/converting.html">IV. Converting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter2.html">2. Pertinent Characteristics of the BRL-CAD Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter3.html">3. Converting From/to ASCII</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter4.html">4. Converting to BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter5.html">5. Converting From BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter6.html">6. Building a New Converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter7.html">7. Postconversion Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/index.html">Articles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_pattern.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_region.html">Using the build_region Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/camo_shader.html">Camouflage shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ebm_primitive.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/gcv.html">The Geometry Conversion Library</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ged.html">GED: An Interactive Solid Modeling System</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/mged/index.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tutorial.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/gui.html">Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/command-line-editing.html">Command Line Editing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/user-commands.html">User Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/developer-commands.html">Developer Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tcl-variables.html">Tcl Variables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/env.html">Environment Variable</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/callback.html">Callback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/brlcad-solid.html">BRL-CAD Solid</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/mgedrc.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/nirt.html">Interactive Raytracing: The nirt Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/overlap_tool.html">The Overlap Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/oed.html">Object Editing - the oed Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/pipes.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/projection_shader.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/tire.html">Vehicle Tire and Wheel Creation in BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/TEMPLATE.html">TEMPLATE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Dev Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../devguides/bool_eval_development.html">NURBS Boolean Evaluation Development Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../presentations/index.html">Presentations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/brlcad-app-devel.html">Application Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/intro-to-tcltk.html">Introduction to Tcl/Tk</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../specifications/BRL_CAD_g_format_V5.html">BRL-CAD Database Format</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manual Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/1.html">man1</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/3.html">man3</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/5.html">man5</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/n.html">mann</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wiki Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Main_page.html">Main Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="all-pages.html">All Pages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Animation.html">Animation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Annot.html">Annotations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Cutting_and_Pasting_PIX_files.html">Cutting and Pasting Pix Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Distributed_Rendering.html">Distributed Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DSP.html">Displacement (DSP) map primitive</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="EBM.html">Inserting an <em>ebm</em> shape in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Extrude.html">Extrude</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Lighting.html">Lighting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="MGED_CMD_simulate.html">MGED CMD simulate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="NMG.html">Non-Manifold Geometry (NMG)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="SGI_Cube.html">SGI Cube</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Sketch.html">Sketch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Spiral.html">Spiral</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Blender_to_CAD.html">Blender to CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Mug.html">Mug Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Newbie.html">BRL-CAD for Newbies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Shaders.html">Shaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling.html">Compiling BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse.html">Compiling BRL-CAD with Eclipse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse_Manually.html">Compile BRL-CAD with Eclipse Manually</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_XCode.html">Compiling BRL-CAD with Xcode on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Code examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Hallo_World_Example.html">CoreInterface Hallo World Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_PrintTitle_Example.html">CoreInterface PrintTitle Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Tree_Walker_Example.html">CoreInterface Tree Walker Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_Application.html">Example application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_db_walk_tree.html">Example DB walk tree</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Burst.html">Burst</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Doxygen.html">BRL-CAD and Doxygen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Early_Raytracing_History.html">Early Raytracing History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV.html">Online Geometry Viewer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV_on_FreeBSD.html">OGV on FreeBSD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Patches.html">How to create, edit or apply a patch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Povray.html">Povray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ProE-BRL.html">ProE-BRL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Ronja.html">BRL-CAD Customer Profile: Ronja</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../hy/index.html">hy</a>
+        </li>
+        <li class="version">
+          <a href="../es/index.html">es</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BRL-CAD</a></li>
+    <li><a href="MgedFAQ.html">MGED FAQ</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/wiki/modules/wiki/pages/MgedFAQ.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">MGED FAQ</h1>
+<div class="sect1">
+<h2 id="_editing_viewing_and_correcting_objects"><a class="anchor" href="#_editing_viewing_and_correcting_objects"></a>Editing, viewing, and correcting objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q1:</strong></p>
+</div>
+<div class="paragraph">
+<p>I am trying to create case walls for ammo, gun tubes, etc. and the way
+I&#8217;m doing it is by making inner and outer walls using rcc and trc
+primitives, and I have figured out that I need to make a combination
+of the two, then hide the primitives and draw the comb, and then do
+<em>rt</em> to see the finished product. That&#8217;s fine. But if I translate or
+rotate the inner wall, for example, away from the point of creation, I
+cannot seem to figure out a way to restore it to its original point so
+that it perfectly lines up concentric with the outer wall. Can this be
+done with the mouse, or must I use the keyboard and editing commands?</p>
+</div>
+<div class="paragraph">
+<p><strong>A1:</strong></p>
+</div>
+<div class="paragraph">
+<p>There are <em>reset</em> and <em>apply</em> options on the Edit menu when you&#8217;re in
+an edit mode on a primitive. The intent is that you incrementally
+apply/accept changes as you are happy with them or reject/reset them
+if you are not. As for your create &#8594; hide &#8594; draw steps, you can
+collapse those with a "B objectname" which will erase everything else
+and draw 'objectname' in one step.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_matrix_editing_objects"><a class="anchor" href="#_matrix_editing_objects"></a>Matrix editing objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q2:</strong></p>
+</div>
+<div class="paragraph">
+<p>Once I create a combination, is the proper way to modify the
+combination via matrix edits, or is there some other way? I understand
+that matrix edits really mean applying the same change to all elements
+of an entity (primitives within a comb, for example), and then pushing
+the common change to all elements.</p>
+</div>
+<div class="paragraph">
+<p><strong>A2:</strong></p>
+</div>
+<div class="paragraph">
+<p>Presuming you mean 3D manipulations (translation, rotation, scaling,
+etc) instead of structural (adding new CSG elements), then yes&#8212;&#8203;matrix
+edit (aka "object edit") is the means to modify. Matrix edit doesn&#8217;t
+have to be on everything in a given combination, but it is a
+hierarchical tree so if you apply a matrix to object A that references
+objects B and C, the matrix applies to that entier hierarchy. Whether
+you push the matris is a modeling design decision, which I personally
+do not like performing so that editing operations retain a useful
+local coordinate systems. Others have different preferences for
+different reasons.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resetting_object_vertex_v"><a class="anchor" href="#_resetting_object_vertex_v"></a>Resetting object vertex (V)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q3:</strong></p>
+</div>
+<div class="paragraph">
+<p>When I move an rcc or trc, I want to reset where V is, but there seems
+to be no command that allows me to reset V to 0 0 0. Is there one?</p>
+</div>
+<div class="paragraph">
+<p><strong>A3:</strong></p>
+</div>
+<div class="paragraph">
+<p>Select translate on the Edit menu and then type:</p>
+</div>
+<div class="paragraph">
+<p><code>mged&gt; p 0 0 0</code></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editing_general_cone_radii"><a class="anchor" href="#_editing_general_cone_radii"></a>Editing general cone radii</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q4:</strong></p>
+</div>
+<div class="paragraph">
+<p>Is there a way to modify the radius of rcc&#8217;s and trc&#8217;s? I can&#8217;t find a
+'set R' command in the prim selection menu anywhere.</p>
+</div>
+<div class="paragraph">
+<p><strong>A4:</strong></p>
+</div>
+<div class="paragraph">
+<p>rcc&#8217;s and trc&#8217;s are all fundamentally a generalized cone represented
+by two vectors at both ends of the cone. To change the radius, select
+either the "Set A,B" or "Set C,D" menu option, and type:</p>
+</div>
+<div class="paragraph">
+<p><code>mged&gt; p ###</code></p>
+</div>
+<div class="paragraph">
+<p>for whatever ### size you want to set it to.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editing_solid_parameters_a_and_b"><a class="anchor" href="#_editing_solid_parameters_a_and_b"></a>Editing solid parameters A and B</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q5:</strong></p>
+</div>
+<div class="paragraph">
+<p>When I try to set A and B at the same time, thinking if I make them
+the same, the radius will be uniform, but it tends to squash them to a
+single point. This leads me to believe that I am setting A and B to
+the same coordinates in space, not the same length (radius). Is this a
+true statement? (I tend to think of geometries in terms of their
+respective dimensions but it seems like with MGED, you have to know
+exactly where in space everything is, and that is not really desirable
+for me most of the time.)</p>
+</div>
+<div class="paragraph">
+<p><strong>A5:</strong></p>
+</div>
+<div class="paragraph">
+<p>Sounds like the size value you&#8217;re using is way too small. It should be
+the absolute size using whatever units you&#8217;re operating with, just a
+single value (e.g., "p 1000"), not multiple values for A and B. Doing
+"Set A,B" basically means "keep the base circular" instead of
+ellipsoidal.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_picking_combination_and_primary_objects"><a class="anchor" href="#_picking_combination_and_primary_objects"></a>Picking combination and primary objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q6:</strong></p>
+</div>
+<div class="paragraph">
+<p>I see that you can pick which combs you want to modify under the comb
+editor, but the same does not apply for the prim editor. The prim
+editor seems to be only or generating new prims. Is that a true
+statement?</p>
+</div>
+<div class="paragraph">
+<p><strong>A6:</strong></p>
+</div>
+<div class="paragraph">
+<p>No, it&#8217;s not true that it only generates new primitives. It&#8217;s just
+lacking a drop-down box because there are generally <strong>way</strong> too many
+primitives for that to be a useful selection mechanism with any real
+model and its use is often discouraged for other reasons (it&#8217;s <strong>very</strong>
+susceptible to human error that in ways that are difficult to recover
+from&#8212;&#8203;use with caution). Type the name of the primitive you wish to
+edit into the 'Name:' field and hit enter. The values should update to
+show that primitive.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_translating_objects"><a class="anchor" href="#_translating_objects"></a>Translating objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q7:</strong></p>
+</div>
+<div class="paragraph">
+<p>When trying to translate a combination, where is the 'Z move'? I see
+only 'X move', 'Y move', 'XY move'. Answer: You may have to select the
+combination and use the <em>translate</em> or <em>tra</em> commands to reposition
+the object.</p>
+</div>
+<div class="paragraph">
+<p><strong>A7:</strong></p>
+</div>
+<div class="paragraph">
+<p>Very good question! The naming convention used on the labels should be
+clarified, but it&#8217;s trivial "once you know". The X and Y don&#8217;t refer
+to the 3D coordinates but rather to the 2D view.. So if you are
+looking at front, left, right, or rear views, then the z axis runs up
+and down the graphics window vertically, so selecting the "X Move"
+option will translate up and down the Z axis. Similarly, if you&#8217;re
+looking from a more complex/arbitrary view, doing an X Move or Y move
+will perform more complex movements than just constrained to a given
+coordinate axis. The labels should probably say something like "Pan
+object horizontally" and "Pan object vertically" for X Move and Y Move
+respectively with the XY Move meaning something like just "Pan
+object".</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_copying_text_from_the_command_window_journal"><a class="anchor" href="#_copying_text_from_the_command_window_journal"></a>Copying text from the command window ('journal')</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q8:</strong></p>
+</div>
+<div class="paragraph">
+<p>Is there a way to block-copy text from the command window, or save it
+as a buffer/text file, in case you want to record the steps it took
+you to do something? I tried using the journal command and even tried
+to view the file while a session was open but it was a zero-length
+file with none of my session saved.</p>
+</div>
+<div class="paragraph">
+<p><strong>A8:</strong></p>
+</div>
+<div class="paragraph">
+<p>The journal command only begins recording from the moment you type
+journal, and presently doesn&#8217;t write out the journal entries until you
+close your session. It&#8217;s a limitation of the implementation. You
+should also be able to copy/paste any text in the command window using
+usual copy/paste methods (select region and click middle mouse button
+in a text buffer in another xterm window, for example).</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fitting_view_to_window"><a class="anchor" href="#_fitting_view_to_window"></a>Fitting view to window</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q9:</strong></p>
+</div>
+<div class="paragraph">
+<p>Is there a 'fit to window' zoom feature?</p>
+</div>
+<div class="paragraph">
+<p><strong>A9:</strong></p>
+</div>
+<div class="paragraph">
+<p>The autoview command automatically resizes geometry when it is loaded
+and it&#8217;s intentionally 50% the bounding of your display size so that
+it&#8217;s guaranteed to be fully displayed at any orientation. You can
+'zoom 2' to make it fit more tightly, and can similarly wrap those two
+commands into a proc of your own. autoview can be run on- demand and
+is automatically run whenever you 'e' or 'draw' something among a
+variety of other commands.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cutting_a_solid_to_make_a_combination"><a class="anchor" href="#_cutting_a_solid_to_make_a_combination"></a>Cutting a solid to make a combination</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q10:</strong></p>
+</div>
+<div class="paragraph">
+<p>How do you use a plane to slice part of a solid to make a combination
+(e.g., a plane cutting a box at an angle and just using the resulting
+portion of the box)?</p>
+</div>
+<div class="paragraph">
+<p><strong>A10:</strong></p>
+</div>
+<div class="paragraph">
+<p>The recommended approach is to create an arb8 or similar <em>box</em> shape
+that is positioned exactly how you want it and subtract or intersect
+as desired. You can also use a "half" primitive, which stands for
+halfspace (which is an infinite plane where half the space is solid
+the other half is empty) though the performance is non-optimal for
+real models.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panning_the_view"><a class="anchor" href="#_panning_the_view"></a>Panning the view</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q11:</strong></p>
+</div>
+<div class="paragraph">
+<p>Can you pan the view before you raytrace so that you can see more of
+the geometry in the rt window (fb) but without having to physically
+move the geometry around?</p>
+</div>
+<div class="paragraph">
+<p><strong>A11:</strong></p>
+</div>
+<div class="paragraph">
+<p>Not sure I understand this question fully, but it sounds like the
+answer is "yes". You can raytrace from any azimuth/elevation as well
+as from any arbitrary view whether <em>panned</em> or not. By default in
+mged, when you run ''rt', it will invoke the raytracer with a view
+that matches the geometry window&#8217;s view so if you&#8217;re not in an edit
+mode, you can change the view to whatever you want without editing or
+modifying geometry.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_translating_objects_away_from_visible_axes"><a class="anchor" href="#_translating_objects_away_from_visible_axes"></a>Translating objects away from visible axes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q12:</strong></p>
+</div>
+<div class="paragraph">
+<p>When you change (translate) the body away from the blue xyz axes, does
+that actually change the coordinates as well, or is that only a visual
+change (i.e. now your coordinates referenced to the origin are totally
+different than from when you started)?</p>
+</div>
+<div class="paragraph">
+<p><strong>A12:</strong></p>
+</div>
+<div class="paragraph">
+<p>Depends whether you&#8217;re in an edit mode. The blue axes you&#8217;re referring
+to, I presume, are the "View" axes which only refer to the orientation
+of the view and which is always at the center. The green axes are the
+model axes, which indicate where an object is at, and when coupled
+with the white edit axes, show you how edits are being performed.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interrogate_mged_for_axis_changes"><a class="anchor" href="#_interrogate_mged_for_axis_changes"></a>Interrogate <em>mged</em> for axis changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q13:</strong></p>
+</div>
+<div class="paragraph">
+<p>Is there any way to interrogate MGED and find out where your new
+(translated) xyz axes are relative to the original origin if you moved
+the object geometry around (i.e. new 0,0,0 =3D old x,y,z + translation
+matrix)?</p>
+</div>
+<div class="paragraph">
+<p><strong>A13:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, turn on the Faceplate option on the Misc menu.. that option
+really should be set by default. Be sure to run File&#8594;Create/
+Update .mgedrc so that it keeps your settings between runs of mged.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_plane_2d_object"><a class="anchor" href="#_creating_a_plane_2d_object"></a>Creating a plane (2D) object</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q14:</strong></p>
+</div>
+<div class="paragraph">
+<p>How can you create just a plane, triangle, etc. if you need one?  Do
+you just make a 3D primitive with zero thickness?</p>
+</div>
+<div class="paragraph">
+<p><strong>A14:</strong></p>
+</div>
+<div class="paragraph">
+<p>This one is somewhat philosophical. BRL-CAD is predominantly a 3D
+solid modeler so creating 2D or 1D objects is not only highly
+discouraged but generally rather complicated. That said, halfspaces
+work well instead of planes, arb5&#8217;s instead of triangles, and spheres
+instead of points. Alternatively, in the 2D realm, you can use the
+sketch primitive and the sketcher to make purely 2D objects, though
+the use of those are generally limited to extrusions. There is a way
+to manually create triangles and meshes, but it&#8217;s non-trivial and
+similarly limited in use until you form a closed 3D shape.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_non_smooth_surface"><a class="anchor" href="#_creating_a_non_smooth_surface"></a>Creating a non-smooth surface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q15:</strong></p>
+</div>
+<div class="paragraph">
+<p>How do you make a non-smooth surface such as a corrugated circular
+surface surrounding a cylinder?</p>
+</div>
+<div class="paragraph">
+<p><strong>A15:</strong></p>
+</div>
+<div class="paragraph">
+<p>There are two methods to achieve that, both with their tradeoffs.  The
+CSG approach would have you create a cylindrical pattern that matches
+your corrugation pattern. For example, you can make something like
+corrugated duct tubes by subtracting a linearly translated pattern of
+torii from a cylinder&#8201;&#8212;&#8201;create a similar smaller version to hollow
+out the middle. Alternatively, you could use a 2D extrusion approach
+for something as simple as a cylinder where you model the shape in 2D
+using a <em>sketch</em> primitive and combine that with an <em>extrude</em>
+operation, and you&#8217;d have it. You can see an example of the CSG
+approach using the pattern tool at <a href="http://ftp.brlcad.org/tmp/gear/" class="bare">http://ftp.brlcad.org/tmp/gear/</a>
+where I create a simple 6-tooth gear using a relatively simple tooth
+shape.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_constraining_angles_of_rotated_components"><a class="anchor" href="#_constraining_angles_of_rotated_components"></a>Constraining angles of rotated components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q16:</strong></p>
+</div>
+<div class="paragraph">
+<p>How do you set the angle that an articulated rotating component may
+sit at (e.g., a hinged part or arm)? Is such a thing possible?</p>
+</div>
+<div class="paragraph">
+<p><strong>A16:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is possible, but frankly not a strong point of the package.  You&#8217;d
+use a joint/constraint system and have it solve for various
+angles. It&#8217;s quite difficult to use frankly, and generally easier to
+perform the rotation using one of several rotation commands (see the
+MGED Quick Reference cheat sheet)--at least one of those is dedicated
+to rotation via angles. You cannot set the angle as an automatically
+resolved constraint at the moment.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repeating_construction_of_an_object_pattern_editing"><a class="anchor" href="#_repeating_construction_of_an_object_pattern_editing"></a>Repeating construction of an object (pattern editing)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q17:</strong></p>
+</div>
+<div class="paragraph">
+<p>If you wanted to distribute a common structure on the inside of a
+cylinder at a fixed spacing, how would you go about doing something
+like that (e.g., a structural stiffener)?</p>
+</div>
+<div class="paragraph">
+<p><strong>A17:</strong></p>
+</div>
+<div class="paragraph">
+<p>If I understand the question correctly, the pattern tool should do the
+trick (on the Tools menu). Probably a cylindrical pattern with some
+periodic/fixed spacing. Basically the same as the gear I mentioned
+above, but with a different base object being duplicated.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_batching_or_scripting_mged_commands"><a class="anchor" href="#_batching_or_scripting_mged_commands"></a>Batching or scripting <em>mged</em> commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q18:</strong></p>
+</div>
+<div class="paragraph">
+<p>Can you take a series of MGED commands to build a geometry and
+batch-file it and just have MGED run the batch file in order to
+autocreate geometries?</p>
+</div>
+<div class="paragraph">
+<p><strong>A18:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes! Create your text file and run mged using the -c option for
+command/classic mode. You can do something like</p>
+</div>
+<div class="paragraph">
+<p><code>$ mged -c file.g &lt; my_transcript.txt</code></p>
+</div>
+<div class="paragraph">
+<p>or here now documents like:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ mged -c file.g &lt;&lt; EOF &gt; my_log.txt 2&gt;&amp;1
+cat my_transcript.txt
+EOF</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and more. You can also use the -c option to run any individual mged
+command without it bringing up the entire mged environment, e.g.,</p>
+</div>
+<div class="paragraph">
+<p><code>$ mged -c myfile.g tops</code></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lighting_and_the_mater_command"><a class="anchor" href="#_lighting_and_the_mater_command"></a>Lighting and the <em>mater</em> command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q19:</strong></p>
+</div>
+<div class="paragraph">
+<p>I have used the mater command to make a combination white but it shows
+up gray in rt. How do I fix that? Is that a lighting property? What
+about the fact that the wireframe in the regular MGED graphics window
+is always red?</p>
+</div>
+<div class="paragraph">
+<p><strong>A19:</strong></p>
+</div>
+<div class="paragraph">
+<p>That is a lighting property and is dependent upon the lights in the
+scene. If you define no lighting sources, rt creates default lights
+for you. First, make sure you really are looking at what you think
+you&#8217;re seeing by setting the object&#8217;s color to green or blue instead
+of white. If you don&#8217;t, then you&#8217;re doing something else wrong. The
+mater command is supposed to be used on regions, which gets into a
+whole hierarchy discussion that is far beyond this forum and better
+explained over the span of the tutorial series. The fact that you set
+a color on a non-region is probably why the wireframe is still red.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_translating_and_rotating_objects"><a class="anchor" href="#_translating_and_rotating_objects"></a>Translating and rotating objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q20:</strong></p>
+</div>
+<div class="paragraph">
+<p>When I shift and rotate geometry around so that it fits into the
+viewing area (a) does that actually reposition the geometry to a new
+place, or is that just visual; (b) is there a 'reset' or 'undo'
+command to reset the geometry to its original position; and (c) is
+there a way to precisely re-zero the geometry?</p>
+</div>
+<div class="paragraph">
+<p><strong>A20:</strong></p>
+</div>
+<div class="paragraph">
+<p>This sounds a lot like question 13 and the answer depends on whether
+you&#8217;re in an edit mode or not. If the edit menu lists a bunch of
+editing options, along with options to Accept/Apply/Reset/Reject, then
+you are in an edit mode and changes to the geometry window may be
+actual edits (it depends what buttons you press&#8212;&#8203;see the cheat sheet
+on the main website documents section). If you don&#8217;t see
+Accept/Apply/Reset/Reject options then nothing you do in the graphics
+window will edit geometry, you&#8217;re only affecting the view orientation.
+If you do see then, then those aforementioned Edit menu options of
+Reset and Reject are there to help. To precisely select a view, either
+use the View menu or type one of the key-bindings in the graphics
+window (e.g., 'f' for front, 't' for top, '3' for 35/25, '0' to stop
+it from spinning if you hit xyzXYZ).</p>
+</div>
+<hr>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<script src="../ui/js/site.js"></script>
+<script async src="../ui/js/vendor/highlight.js"></script>
+<script src="../ui/js/vendor/lunr.js"></script>
+<script src="../ui/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../ui/css/search.css"></script>
+<script async src="../search-index.js"></script>
+
+<script async src="../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>

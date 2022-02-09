@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Modeling the Chess Set :: BRL-CAD Documentation</title>
+    <link rel="canonical" href="https://brl-cad.github.io/docs/intro/modeling-chessboard.html">
+    <link rel="prev" href="modeling-knight.html">
+    <link rel="next" href="../lessons/mged.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../ui/css/site.css">
+    <link rel="stylesheet" href="../ui/css/custom.css">
+    <script>var uiRootPath = '../ui'</script>
+    <link rel="icon" href="../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-pawn.html">Modeling Pawn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-rook.html">Modeling Rook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-king.html">Modeling King</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-queen.html">Modeling Queen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-bishop.html">Modeling Bishop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modeling-knight.html">Modeling Knight</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="modeling-chessboard.html">Modeling the Chess Set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lessons</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lessons/mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/01_creating_primitive_shapes.html">1. Creating Primitive Shapes in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/02_learning_viewing_options.html">2. Learning Viewing Options in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/03_using_insert_command.html">3. Using the Insert Command in MGED to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/04_assign_mat_prop_rt.html">4. Assigning Material Properties and Raytracing in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/05_learning_boolean_expressions.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/06_creating_a_goblet.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/07_goblet_material_properties.html">7. Assigning Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/08_goblet_material_properties2.html">8. Assigning More Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/09_globe_in_display_box.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/10_creating_mug.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/11_refining_mug.html">11. Refining a Mug Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/12_mug_through_gui.html">12. Creating a Mug Model using the MGED Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/13_placing_shapes_in_3d.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/14_placing_shapes_in_3d_2.html">14. Additional Exercises Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/15_creating_a_toy_truck.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/16_mod_tech_struct.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Books</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hacking/index.html">Hacking BRL-CAD</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter1.html">A Call to Arms (and Contributors)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter2.html">Feature Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter3.html">Working with Our Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter4.html">What Code to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter5.html">Contributing Code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documenters</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter6.html">Working with Our Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter7.html">Types of Documentation We Maintain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter8.html">What Documentation to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter9.html">Contributing Documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other Contributors</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part4/chapter10.html">You Can Help Too</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix: Resources and Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix1.html">Further References and Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix2.html">AsciiDoc Examples</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix3.html">Code Example: Shooting Rays</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix4.html">Code Example: Walking Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix5.html">Code Example: Command Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix6.html">Example Code: Root Solving</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/overview.html">I. An Overview of BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/mged-intro.html">II. Introduction to MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface1.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface2.html">Acknowledgments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter1.html">1. Creating Primitive Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter2.html">2. Learning the Viewing Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter3.html">3. Using the Insert Command to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter4.html">4. Assigning Material Properties and Raytracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter5.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter6.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter7.html">7. Assigning Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter8.html">8. Assigning More Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter9.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter10.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter11.html">11. Refining the Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter12.html">12. Creating the Mug Through the GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter13.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter14.html">14. Gaining More Practice Placing Shapes in Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter15.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter16.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/appendix1.html"><code class="app">MGED</code> Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/modeling.html">III. Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter2.html">2. The Model Process</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter3.html">3. Measuring data</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter4.html">4. Organizing the Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter5.html">5. Developing Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter6.html">5. Evaluating Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter7.html">7. Logging Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix1.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix2.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix3.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix4.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix5.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix6.html">Using the build_region Command</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/converting.html">IV. Converting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter2.html">2. Pertinent Characteristics of the BRL-CAD Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter3.html">3. Converting From/to ASCII</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter4.html">4. Converting to BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter5.html">5. Converting From BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter6.html">6. Building a New Converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter7.html">7. Postconversion Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/index.html">Articles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_pattern.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_region.html">Using the build_region Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/camo_shader.html">Camouflage shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ebm_primitive.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/gcv.html">The Geometry Conversion Library</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ged.html">GED: An Interactive Solid Modeling System</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/mged/index.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tutorial.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/gui.html">Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/command-line-editing.html">Command Line Editing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/user-commands.html">User Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/developer-commands.html">Developer Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tcl-variables.html">Tcl Variables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/env.html">Environment Variable</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/callback.html">Callback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/brlcad-solid.html">BRL-CAD Solid</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/mgedrc.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/nirt.html">Interactive Raytracing: The nirt Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/overlap_tool.html">The Overlap Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/oed.html">Object Editing - the oed Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/pipes.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/projection_shader.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/tire.html">Vehicle Tire and Wheel Creation in BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/TEMPLATE.html">TEMPLATE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Dev Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../devguides/bool_eval_development.html">NURBS Boolean Evaluation Development Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../presentations/index.html">Presentations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/brlcad-app-devel.html">Application Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/intro-to-tcltk.html">Introduction to Tcl/Tk</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../specifications/BRL_CAD_g_format_V5.html">BRL-CAD Database Format</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manual Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/1.html">man1</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/3.html">man3</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/5.html">man5</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/n.html">mann</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wiki Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../wiki/Main_page.html">Main Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../wiki/Documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../wiki/all-pages.html">All Pages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Animation.html">Animation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Annot.html">Annotations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Cutting_and_Pasting_PIX_files.html">Cutting and Pasting Pix Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Distributed_Rendering.html">Distributed Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/DSP.html">Displacement (DSP) map primitive</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/EBM.html">Inserting an <em>ebm</em> shape in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Extrude.html">Extrude</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Lighting.html">Lighting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/MGED_CMD_simulate.html">MGED CMD simulate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/NMG.html">Non-Manifold Geometry (NMG)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/SGI_Cube.html">SGI Cube</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Sketch.html">Sketch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Spiral.html">Spiral</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Blender_to_CAD.html">Blender to CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Mug.html">Mug Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Newbie.html">BRL-CAD for Newbies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Shaders.html">Shaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Compiling.html">Compiling BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Compiling_Eclipse.html">Compiling BRL-CAD with Eclipse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Compiling_Eclipse_Manually.html">Compile BRL-CAD with Eclipse Manually</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Compiling_XCode.html">Compiling BRL-CAD with Xcode on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Code examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/CoreInterface_Hallo_World_Example.html">CoreInterface Hallo World Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/CoreInterface_PrintTitle_Example.html">CoreInterface PrintTitle Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/CoreInterface_Tree_Walker_Example.html">CoreInterface Tree Walker Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Example_Application.html">Example application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Example_db_walk_tree.html">Example DB walk tree</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Burst.html">Burst</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Doxygen.html">BRL-CAD and Doxygen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Early_Raytracing_History.html">Early Raytracing History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/OGV.html">Online Geometry Viewer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/OGV_on_FreeBSD.html">OGV on FreeBSD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Patches.html">How to create, edit or apply a patch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Povray.html">Povray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/ProE-BRL.html">ProE-BRL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../wiki/Ronja.html">BRL-CAD Customer Profile: Ronja</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../hy/index.html">hy</a>
+        </li>
+        <li class="version">
+          <a href="../es/index.html">es</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BRL-CAD</a></li>
+    <li><a href="index.html">Introduction</a></li>
+    <li><a href="modeling-chessboard.html">Modeling the Chess Set</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/docs/modules/intro/pages/modeling-chessboard.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Modeling the Chess Set</h1>
+<div class="sect1">
+<h2 id="_chessboard"><a class="anchor" href="#_chessboard"></a>1. Chessboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this lesson, we are going to model the chessboard. Given below is
+our target design:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/09-chessboard.jpg" alt="09 chessboard">
+</div>
+</div>
+<div class="paragraph">
+<p>Create a new database name <code class="path">chess.g</code></p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">opendb chess.g</span></code> <kbd>ENTER</kbd></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_assigning_a_title_to_your_database"><a class="anchor" href="#_assigning_a_title_to_your_database"></a>2. Assigning a title to your database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the MGED command window, type <code class="cmd">title</code> followed by the title of
+your database justifying what you are making. Press <kbd>Enter</kbd> at the
+end.</p>
+</div>
+<div class="paragraph">
+<p><code><span class="prompt">mged&gt;</span> <span class="in">title Chess</span></code> <kbd>ENTER</kbd></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_single_tile_for_the_chessboard"><a class="anchor" href="#_creating_a_single_tile_for_the_chessboard"></a>3. Creating a single tile for the chessboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before beginning, make sure that MGED Command Window is active
+(by clicking anywhere in the window). Then type in the command:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">in tile.s1 rpp 0 1 0 1 -0.1 0</span></code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/47-tile.jpg" alt="47 tile">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_a_region_of_the_tile"><a class="anchor" href="#_making_a_region_of_the_tile"></a>4. Making a region of the tile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Type in the MGED prompt:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">r tile.r1 u tile.s1</span></code></p>
+</div>
+<div class="paragraph">
+<p>This command makes a region with the name <code>tile.r1</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_the_clone_command"><a class="anchor" href="#_understanding_the_clone_command"></a>5. Understanding the clone command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let’s understand the clone command first.  This command is used to do
+deep copying in MGED. The syntax for this command is:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="cmd">clone</span> [<span class="opt">-abhimnprtv</span>] &lt;object&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Here each one of the <code>[<span class="opt">-abhimnprtv</span>]</code> have a specific
+meaning to it. Let’s better understand this command using examples.</p>
+</div>
+<div class="paragraph">
+<p>Create a demo database by typing <code><span class="in">mged demo.g</span></code> in the command
+prompt. Then, create a sphere using the <code class="cmd">in</code> command as follows:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">in tile.s1 rpp 0 1 0 1 -0.1 0</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>Option <code><span class="opt">-a</span> &lt;n&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</code> specifies the translation split
+dimensions between n clones.  Type,</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -a 2 0 0 3 tile.</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>MGED will show this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tile.s101 {tile.s101 tile.s201}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means, you have got two clones separated by distance 3
+units on the <strong>z</strong>-axis. To visually verify it, type:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">draw tile.s101 tile.s2</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/48-tile-translation-clones.jpg" alt="48 tile translation clones">
+</div>
+</div>
+<div class="paragraph">
+<p>Option <code><span class="opt">-b</span> &lt;n&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</code> specifies a rotation around the
+<strong>x</strong>, <strong>y</strong> and <strong>z</strong> axes split between <strong>n</strong> copies.</p>
+</div>
+<div class="paragraph">
+<p>Example: Type <code><span class="in">Z</span></code> on the MGED command prompt to clear the
+graphic window.
+Then type,</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><span class="prompt">mged&gt;</span> <span class="in">draw tile.s1</span>
+<span class="prompt">mged&gt;</span> <span class="in">clone -b 2 0 180 0 tile.s1</span>
+tile.s301 {tile.301 tile.401}</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/49-tile-rotation-clones.jpg" alt="49 tile rotation clones">
+</div>
+</div>
+<div class="paragraph">
+<p>You see that the cloned tiles are separated from each other by an
+angle of 180 along the <strong>y</strong> axis.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="opt">-c</code>&#8201;&#8212;&#8201;Increment the second number in object names.</p>
+</li>
+<li>
+<p><code class="opt">-f</code>&#8201;&#8212;&#8201;Don’t draw the new object.</p>
+</li>
+<li>
+<p><code class="opt">-g</code>&#8201;&#8212;&#8201;Don’t resize the view after drawing new objects.</p>
+</li>
+<li>
+<p><code class="opt">-h</code>&#8201;&#8212;&#8201;Prints the message.</p>
+</li>
+<li>
+<p><code><span class="opt">-i</span> &lt;n&gt;</code>&#8201;&#8212;&#8201;Specifies the increment between each copy.</p>
+</li>
+<li>
+<p><code><span class="opt">-m</span> &lt;axis&gt; &lt;pos&gt;</code>&#8201;&#8212;&#8201;Specifies the axis and point to mirror
+the group.</p>
+</li>
+<li>
+<p><code><span class="opt">-n</span> &lt;# copies&gt;</code>&#8201;&#8212;&#8201;Specifies the copies you make.</p>
+</li>
+<li>
+<p><code><span class="opt">-p</span> &lt;x&gt; &lt;y&gt; &lt;z&gt;</code>&#8201;&#8212;&#8201;Specifies point to rotate around for
+<code class="opt">-r</code>. Default is <code>0 0 0</code>.</p>
+</li>
+<li>
+<p><code><span class="opt">-r</span> &lt;x&gt; &lt;y&gt; &lt;z&gt;</code>&#8201;&#8212;&#8201;Specifies the rotation around <strong>x</strong>, <strong>y</strong>
+and <strong>z</strong> axes. It works same as <code class="opt">-b</code> when combined with
+<code class="opt">-n</code>.</p>
+</li>
+<li>
+<p><code><span class="opt">-t</span> &lt;x&gt; &lt;y&gt; &lt;z&gt;</code>&#8201;&#8212;&#8201;Specifies the translation between each
+copy. It works same as <code class="opt">-a</code> when combined with <code>n</code>.</p>
+</li>
+<li>
+<p><code class="opt">-v</code>&#8201;&#8212;&#8201;Prints version info.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cloning_the_tile_for_three_other_tiles"><a class="anchor" href="#_cloning_the_tile_for_three_other_tiles"></a>6. Cloning the tile for three other tiles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coming back to our chessboard, let’s clone the tile we made earlier.
+Now, type:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -t 2 0 0 -i 1 -n 3 tile.r1</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>MGED will respond with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tile.r2 {tile.s2 tile.s3 tile.s4 tile.r2 tile.r3 tile.r4}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command translates the first clone <code>tile.r2</code> at <code>x:2 y:0 z:0</code>
+(leaving a gap of 1 unit) and then increments it value by 1 for the
+next clone. <code><span class="opt">-n</span> 3</code> specifies that it creates three clones
+(<code>tile.r2 tile.r3 tile.r4</code>)</p>
+</div>
+<div class="paragraph">
+<p>This command successfully creates single colored tiles of a row. Till
+now, you can only see one tile in the graphics window, to see all the
+clone, type:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">draw tile.r2 tile.r3 tile.r4</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>Left click on the graphic window for all the tiles to fit in the
+graphics window.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/50-tiles-of-a-row.jpg" alt="50 tiles of a row">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grouping_the_tiles_in_a_row"><a class="anchor" href="#_grouping_the_tiles_in_a_row"></a>7. Grouping the tiles in a row</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let’s group these tiles in one row:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">g row.g1 tile.r1 tile.r2 tile.r3 tile.r4</span></code> <kbd>ENTER</kbd></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_an_alternate_row_by_cloning"><a class="anchor" href="#_creating_an_alternate_row_by_cloning"></a>8. Creating an alternate row by cloning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get the tiles in alternate position as present in the above
+screenshot, we will clone this row and translate it to <code>x:1 y:1 z:0</code>,
+as shown below:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -t 1 1 0 -i 1 row.g1</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>MGED will respond with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>row.g2 {tile.s5 tile.r5 tile.s6 tile.r6 tile.s7 tile.r7
+tile.s8 tile.r8 row.g2}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type <code><span class="in">draw row.g2</span></code> <kbd>ENTER</kbd> in the command prompt to view the
+<code>row.g2</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/51-two-rows-of-tiles.jpg" alt="51 two rows of tiles">
+</div>
+</div>
+<div class="paragraph">
+<p>There are total 8 rows in a chess board, so we will have 3 clones each
+of <code>row.g1</code> and <code>row.g2</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_the_remaining_rows"><a class="anchor" href="#_making_the_remaining_rows"></a>9. Making the remaining rows</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now, we will be translating along the <strong>y</strong> axis, therefore the command
+will be:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -t 0 2 0 -i 1 -n 3 row.g1</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>And for <code>row.g2</code></p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -t 0 2 0 -i 1 -n 3 row.g2</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>You will get <code>row.g3</code> , <code>row.g4</code> , <code>row.g5</code> clones of <code>row.g1</code> and
+clones <code>row.g6</code> , <code>row.g7</code> , <code>row.g8</code> of <code>row.g2</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can view these rows by using the draw command:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">draw row.g3 row.g4 row.g5 row.g6 row.g7 row.g8</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/52-all-alternate-tiles.jpg" alt="52 all alternate tiles">
+</div>
+</div>
+<div class="paragraph">
+<p>You see that here we only have alternate tiles i.e., tiles of one
+color.  Let’s group them together under one name <code>black.g</code> as shown
+below:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">g black.g row.g1 row.g2 row.g3 row.g4 row.g5 row.g6 row.g7
+row.g8</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>Now, in order to make the white tiles we will clone the group of black
+tiles <code>black.g</code> , as shown below:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">clone -r 0 0 90 -p 4 4 0 black.g</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>We will get a clone with the name <code>black.g2</code>. We can change the name
+of this group to <code>white.g</code> using the <code class="cmd">mv</code> command.</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">mv black.g2 white.g</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>Now, let’s have a look at the rest of our slides by typing <code><span class="in">draw
+white.g</span></code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/53-all-tiles.jpg" alt="53 all tiles">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_giving_colors_to_our_tiles"><a class="anchor" href="#_giving_colors_to_our_tiles"></a>10. Giving colors to our tiles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section we will color our tiles using the <code class="cmd">comb_color</code> command
+which means combination color i.e. color of the whole
+combination/group. The syntax to use this command is:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="cmd">comb_color</span> <em>combination</em> <em>R</em> <em>G</em> <em>B</em></code></p>
+</div>
+<div class="paragraph">
+<p>Where <code>combination</code> is the name of the combination we want to color.
+<code>R</code>, <code>G</code> and <code>B</code> are the red, green and blue values respectively.</p>
+</div>
+<div class="paragraph">
+<p>To color the black tiles:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">comb_color black.g 0 0 0</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>To color the white tiles:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">comb_color white.g 255 255 255</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>Now combine these black and white tiles to form a board.</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">g board.g black.g white.g</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>And then comes the final part, which is to raytrace our chessboard.
+Before we raytrace, move the mouse pointer to the Command Prompt and
+type at the prompt:</p>
+</div>
+<div class="paragraph">
+<p><code><span class="in">B board.g</span></code> <kbd>ENTER</kbd></p>
+</div>
+<div class="paragraph">
+<p>This command clears the screen and redraws the board with the
+specified colors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raytracing_the_board"><a class="anchor" href="#_raytracing_the_board"></a>11. Raytracing the Board</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to the <strong>File</strong> menu and select <strong>Raytrace</strong>. The Raytrace Control
+Panel opens. To have a lighter background, click on the dropdown
+button on the right of <strong>Background Color</strong>.  Click on <strong>Raytrace</strong> to
+start the raytracing process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/54-raytrace-control-panel.jpg" alt="54 raytrace control panel">
+</div>
+</div>
+<div class="paragraph">
+<p>While it is raytracing, click on the Framebuffer options in the
+<em>Raytrace Control Panel Menu Bar</em> and click on <strong>Overlay</strong>.</p>
+</div>
+<div class="paragraph">
+<p>After the raytracing process is completed, you get a board, as shown
+below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/55-chessboard.jpg" alt="55 chessboard">
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="modeling-knight.html">Modeling Knight</a></span>
+  <span class="next"><a href="../lessons/mged.html">MGED</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../ui/js/site.js"></script>
+<script async src="../ui/js/vendor/highlight.js"></script>
+<script src="../ui/js/vendor/lunr.js"></script>
+<script src="../ui/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../ui/css/search.css"></script>
+<script async src="../search-index.js"></script>
+
+<script async src="../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>

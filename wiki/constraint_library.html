@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>libpc: Parametrics and Constraints :: BRL-CAD Documentation</title>
+    <link rel="canonical" href="https://brl-cad.github.io/docs/wiki/constraint_library.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../ui/css/site.css">
+    <link rel="stylesheet" href="../ui/css/custom.css">
+    <script>var uiRootPath = '../ui'</script>
+    <link rel="icon" href="../ui/img/icon/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://brl-cad.github.io/docs">
+        <img src="../ui/img/logo/brlcad.png" height="48px">
+        &nbsp;BRL-CAD Documentation
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- <a class="navbar-item" href="https://brl-cad.github.io/docs">Home</a> -->
+        <a class="navbar-item" href="https://brl-cad.github.io/docs/intro/">Introduction</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/gallery/" target="_blank">Gallery</a>
+        <a class="navbar-item" href="https://brl-cad.github.io/wiki/" target="_blank">Wiki</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Translations</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://brl-cad.github.io/docs">English</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/it/">Italian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/es/">Spanish</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/ru/">Russian</a>
+            <a class="navbar-item" href="https://brl-cad.github.io/docs/hy/">Armenian</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/index.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-pawn.html">Modeling Pawn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-rook.html">Modeling Rook</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-king.html">Modeling King</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-queen.html">Modeling Queen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-bishop.html">Modeling Bishop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-knight.html">Modeling Knight</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/modeling-chessboard.html">Modeling the Chess Set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Lessons</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../lessons/mged.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/01_creating_primitive_shapes.html">1. Creating Primitive Shapes in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/02_learning_viewing_options.html">2. Learning Viewing Options in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/03_using_insert_command.html">3. Using the Insert Command in MGED to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/04_assign_mat_prop_rt.html">4. Assigning Material Properties and Raytracing in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/05_learning_boolean_expressions.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/06_creating_a_goblet.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/07_goblet_material_properties.html">7. Assigning Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/08_goblet_material_properties2.html">8. Assigning More Material Properties to a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/09_globe_in_display_box.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/10_creating_mug.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/11_refining_mug.html">11. Refining a Mug Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/12_mug_through_gui.html">12. Creating a Mug Model using the MGED Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/13_placing_shapes_in_3d.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/14_placing_shapes_in_3d_2.html">14. Additional Exercises Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/15_creating_a_toy_truck.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lessons/mged/16_mod_tech_struct.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Books</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hacking/index.html">Hacking BRL-CAD</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter1.html">A Call to Arms (and Contributors)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part1/chapter2.html">Feature Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter3.html">Working with Our Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter4.html">What Code to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part2/chapter5.html">Contributing Code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documenters</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter6.html">Working with Our Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter7.html">Types of Documentation We Maintain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter8.html">What Documentation to Work On</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part3/chapter9.html">Contributing Documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other Contributors</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part4/chapter10.html">You Can Help Too</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix: Resources and Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix1.html">Further References and Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix2.html">AsciiDoc Examples</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix3.html">Code Example: Shooting Rays</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix4.html">Code Example: Walking Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix5.html">Code Example: Command Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../hacking/part5/appendix6.html">Example Code: Root Solving</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/overview.html">I. An Overview of BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/mged-intro.html">II. Introduction to MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface1.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/preface2.html">Acknowledgments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter1.html">1. Creating Primitive Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter2.html">2. Learning the Viewing Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter3.html">3. Using the Insert Command to Size and Place Shapes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter4.html">4. Assigning Material Properties and Raytracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter5.html">5. Learning About Boolean Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter6.html">6. Creating a Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter7.html">7. Assigning Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter8.html">8. Assigning More Material Properties to Your Goblet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter9.html">9. Creating a Globe in a Display Box</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter10.html">10. Creating a Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter11.html">11. Refining the Mug</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter12.html">12. Creating the Mug Through the GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter13.html">13. Placing Shapes in 3-D Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter14.html">14. Gaining More Practice Placing Shapes in Space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter15.html">15. Creating a Toy Truck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/chapter16.html">16. Learning Modeling Techniques and Structures</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/mged-intro/appendix1.html"><code class="app">MGED</code> Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/modeling.html">III. Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter2.html">2. The Model Process</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter3.html">3. Measuring data</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter4.html">4. Organizing the Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter5.html">5. Developing Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter6.html">5. Evaluating Geometry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/modeling/chapter7.html">7. Logging Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix1.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix2.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix3.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix4.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix5.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorials/modeling/appendix6.html">Using the build_region Command</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/converting.html">IV. Converting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter1.html">1. Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter2.html">2. Pertinent Characteristics of the BRL-CAD Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter3.html">3. Converting From/to ASCII</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter4.html">4. Converting to BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter5.html">5. Converting From BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter6.html">6. Building a New Converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/converting/chapter7.html">7. Postconversion Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/index.html">Articles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_pattern.html">Using the Build Pattern Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/build_region.html">Using the build_region Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/camo_shader.html">Camouflage shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ebm_primitive.html">Using the Extruded Bitmap Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/gcv.html">The Geometry Conversion Library</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/ged.html">GED: An Interactive Solid Modeling System</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../articles/mged/index.html">MGED</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tutorial.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/gui.html">Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/command-line-editing.html">Command Line Editing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/user-commands.html">User Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/developer-commands.html">Developer Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/tcl-variables.html">Tcl Variables</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/env.html">Environment Variable</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/callback.html">Callback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../articles/mged/brlcad-solid.html">BRL-CAD Solid</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/mgedrc.html">Setting Up a .mgedrc File</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/nirt.html">Interactive Raytracing: The nirt Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/overlap_tool.html">The Overlap Tool</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/oed.html">Object Editing - the oed Command</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/pipes.html">Using the Pipe Primitive</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/projection_shader.html">Using the Projection Shader</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/tire.html">Vehicle Tire and Wheel Creation in BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../articles/TEMPLATE.html">TEMPLATE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Dev Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../devguides/bool_eval_development.html">NURBS Boolean Evaluation Development Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../presentations/index.html">Presentations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/brlcad-app-devel.html">Application Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../presentations/intro-to-tcltk.html">Introduction to Tcl/Tk</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../specifications/BRL_CAD_g_format_V5.html">BRL-CAD Database Format</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manual Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/1.html">man1</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/3.html">man3</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/5.html">man5</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../man/n.html">mann</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wiki Pages</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Main_page.html">Main Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="all-pages.html">All Pages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Animation.html">Animation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Annot.html">Annotations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Cutting_and_Pasting_PIX_files.html">Cutting and Pasting Pix Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Distributed_Rendering.html">Distributed Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DSP.html">Displacement (DSP) map primitive</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="EBM.html">Inserting an <em>ebm</em> shape in MGED</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Extrude.html">Extrude</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Lighting.html">Lighting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="MGED_CMD_simulate.html">MGED CMD simulate</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="NMG.html">Non-Manifold Geometry (NMG)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="SGI_Cube.html">SGI Cube</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Sketch.html">Sketch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Spiral.html">Spiral</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Blender_to_CAD.html">Blender to CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Mug.html">Mug Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Newbie.html">BRL-CAD for Newbies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Shaders.html">Shaders</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling.html">Compiling BRL-CAD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse.html">Compiling BRL-CAD with Eclipse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_Eclipse_Manually.html">Compile BRL-CAD with Eclipse Manually</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Compiling_XCode.html">Compiling BRL-CAD with Xcode on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Code examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Hallo_World_Example.html">CoreInterface Hallo World Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_PrintTitle_Example.html">CoreInterface PrintTitle Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CoreInterface_Tree_Walker_Example.html">CoreInterface Tree Walker Example</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_Application.html">Example application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Example_db_walk_tree.html">Example DB walk tree</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Misc</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Burst.html">Burst</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Doxygen.html">BRL-CAD and Doxygen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Early_Raytracing_History.html">Early Raytracing History</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV.html">Online Geometry Viewer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OGV_on_FreeBSD.html">OGV on FreeBSD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Patches.html">How to create, edit or apply a patch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Povray.html">Povray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ProE-BRL.html">ProE-BRL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Ronja.html">BRL-CAD Customer Profile: Ronja</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+
+<div style="display: none;">
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BRL-CAD</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">BRL-CAD</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../ru/index.html">ru</a>
+        </li>
+        <li class="version">
+          <a href="../it/index.html">it</a>
+        </li>
+        <li class="version">
+          <a href="../hy/index.html">hy</a>
+        </li>
+        <li class="version">
+          <a href="../es/index.html">es</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BRL-CAD</a></li>
+    <li><a href="constraint_library.html">libpc: Parametrics and Constraints</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/BRL-CAD/brlcad-docs/edit/main/wiki/modules/wiki/pages/constraint_library.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">libpc: Parametrics and Constraints</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proposed sytem for parametrics and constraint implementation by Dawn
+Thomas (homovulgaris)</p>
+</div>
+<div class="paragraph">
+<p>Provision for Parametrics and constraints greatly improves the
+performance of a Computer Aided Design System both in terms of geometry
+generation as well as analysis. Considering the unix model of division
+into multiple tools and libraries for individual functions as well as
+the fact that parametric/constraint functionalities are <strong>not critical</strong>
+elements in terms of geometry generation and raytracing, a logical
+solution would be the implemenation of a separate library (libpg)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_function"><a class="anchor" href="#_function"></a>Function</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>libpg adds the following provisions to BRL-CAD system</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creation &amp; Modification of parameter-based geometry objects</p>
+</li>
+<li>
+<p>Creation of constraints between geometry objects</p>
+</li>
+<li>
+<p>Creation &amp; Storage of Parametric Objects (non-geometric)</p>
+</li>
+<li>
+<p>Modification of geometry objects in .g files to indicate parametric
+nature</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Part 1 would include building parametric objects based on existing
+non-parametric geometry objects as well as generation of purely
+parametric geometry. libpg acts as a library which sits above librt
+using the librt methods for creation and modification of geometry</p>
+</div>
+<div class="paragraph">
+<p>To efectively implement constraints, the library would first implement
+constraint functionality which currently exists in terms of implicit
+constraints ( Non negative radius, Perpendicular vectors etc. ) To see a
+list of implicit constraints in the various BRL-CAD primitives See <a href="A_Survey_of_Implicit_Constraints_in_Primitives">A
+Survey of Implicit Constraints in
+Primitives</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_constraints_and_csps"><a class="anchor" href="#_constraints_and_csps"></a>Constraints and CSPs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A constraint system can be looked upon as a system of variables, their
+associated domains and set of constraints/relationships between the
+variables.</p>
+</div>
+<div class="paragraph">
+<p>Fundamentally this can be visualised using a constraint network which is
+a 3-tuple. Further we can have a graph based visualization of the same
+using vertices as variables and edges connecting vertices as
+constraints. It would be intuitive only for networks having binary
+(between two variables) or unary (with self) constraints. Otherwise, one
+has to visualize hypergraphs which contain hyperedges which is basically
+a line connecting multiple vertices for example. Also note that there
+could arise a situation where constraints depend on constraints ( edges
+connected to edges in the above discussion ) and hence such hypergraphs
+don&#8217;t fit neatly into the bipartite graph structure.</p>
+</div>
+<div class="paragraph">
+<p>For a short review of Constraints, and Constraint Satisfaction Problems
+as well as links to resources on Constraints in general and geometrical
+constraints in particular, please see <a href="Constraint_Satisfaction">Constraint
+Satisfaction</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_architecture"><a class="anchor" href="#_library_architecture"></a>Library architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LibPC is composed of two sections which are functionally implemented
+using 4 modules as represented in the diagram below.</p>
+</div>
+<div class="paragraph">
+<p>The modules respectively are ( in the order of operation during a
+read-out solution process)</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Reader/Import</strong> which reads from the .g file and generates C-based
+internal structs</p>
+</li>
+<li>
+<p><strong>Constraint Network Generator/ Constraint Variable System
+Generator</strong> which takes the above structs and produces the
+respective Variable and Constraint (pcVariable.h and pcConstraint.h)
+class objects and their graph/hypergraph representation</p>
+</li>
+<li>
+<p><strong>Solver</strong> which takes the above Constraint Network as an input and
+generates a solution / multiple solutions or in effect a Solution
+object</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Geometry Updater</strong> which uses the above solution and takes care of
+the rest such as</p>
+<div class="ulist">
+<ul>
+<li>
+<p>suggest user to select a value in case of multiple solutions for
+narrowing down the solution range</p>
+</li>
+<li>
+<p>update the various parameters of all <strong>associated geometry</strong></p>
+</li>
+<li>
+<p>write the data onto the .g file</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementation_details"><a class="anchor" href="#_implementation_details"></a>Implementation Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For effective integration with librt system as well as rest of existing
+brl-cad architecture, the Reader as well as Geometry Updater is entirely
+in C using standard datastructures. At the same time to make use of the
+functionality offered by various graph algorithms of boost as well as
+the power of object oriented programming model in constraint solution,
+the Constraint Network generator as well as solver is entirely coded in
+C&#43;&#43;. Extensive use of Boost library is expected, in particular</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>constrained_value system : for representing implicit constraints
+using a predicate system</p>
+</li>
+<li>
+<p>Boost Graph Library : for graph based representation of the
+constraints. <strong>Since BGL does not have support for Hypergraphs, the
+author plans to implement hypergraphs independently while adhering
+to Boost standards ( probable addition to boost itself)</strong></p>
+</li>
+<li>
+<p>Boos Spirit Library : for the parser based generation of constraint
+objects from expressions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Spirit is an object-oriented recursive-descent parser generator
+framework implemented using template meta-programming techniques.
+Expression templates allow us to approximate the syntax of Extended
+Backus-Normal Form (EBNF) completely in C&#43;&#43;. Spirit details available at
+<a href="http://www.boost.org/doc/libs/1_35_0/libs/spirit/index.html">boost.org</a></p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;Content below is undergoing modification&#8201;&#8212;&#8201;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_constraint_object_architecture"><a class="anchor" href="#_constraint_object_architecture"></a>Constraint object architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An object oriented method of implementation would be the creation of a
+mixed ( in the sense that they contain both geometric and non-geometric
+information ) object. The object architecture is as shown below which
+shows the data types as well as the public and private methods.
+<span class="image"><img src="_images/LibpgObjectArch.png" alt="LibpgObjectArch.png" width="600"></span></p>
+</div>
+<div class="sect2">
+<h3 id="_parametric_geometric_objects"><a class="anchor" href="#_parametric_geometric_objects"></a>Parametric Geometric Objects</h3>
+<div class="paragraph">
+<p>From an Object Oriented point of view the major advantages is in terms
+of the structuring of data and in particular the system of calling
+methods or procedures. In effect each object knows how to evaluate
+equations within its space. For example a line or a curve <strong>knows</strong> (
+has a method to ) calculate and return the coordinates of a point with a
+certain parameter value in its space ( a point at 0.6 ratio of length of
+the curve) With this value ( coordinates) thus returned and with the
+existing knowledge ( parent: curveid , parameter value:0.6 ) a
+parametric point object has the methods to instantiate it and store it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_constraint_objects"><a class="anchor" href="#_constraint_objects"></a>Constraint Objects</h3>
+<div class="paragraph">
+<p>The above method is efficient and useful only in the generation,
+modification and analysis of new geometry based on existing parametric/
+non-parametric geometry. The evaluation method for constraints between
+already existing independent geometry would require special constraint
+objects. The effective difference between these objects and the earlier
+arises from the fact that generation of the parametric geometric objects
+depend on parametrics whereas constraints may or may not be feasible and
+thus evaluation would result in multiple solutions and they represent
+relationship between two independently defined elements ( parametrically
+or not )</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integration_with_librt"><a class="anchor" href="#_integration_with_librt"></a>Integration with librt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Two major aspects of integration with librt are</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Database I/O</p>
+</li>
+<li>
+<p>Declaration/ Extraction of parameters/variables from respective
+rt_*_internal structures</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Since most of the database input-output presently is completely handled
+by librt, it is expedient to use the same convention for writing the new
+non-geometric constraint object to the database. This is achieved
+through the pc_constraint_export and pc_constraint_import functions
+which are called by such functions as wdb_export or
+rt_db_put_internal via a new functab entry in table.c Or in more
+detail the steps taken to achieve these are</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Definition of ID_CONSTRAINT (39) in raytrace.h ( corresponding
+increment to ID_MAXIMUM)</p>
+</li>
+<li>
+<p>Creation of a corresponding entry to functab array in table.c</p>
+</li>
+<li>
+<p>Addition of pc_constraint_export,pc_constraint_import and
+pc_constraint_ifree functions</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Regarding the declaration or extraction of parameters, the method of
+approach is to use a callback function rt_functab. Associated with each
+existing element we add a rt_*<em>params function which is called via
+the functab. This would declare the list of parameters it is built on as
+well as the list of implicit constraints on these parameters if any (
+for example in the case of an ellipse there are 4 parameters: 1 point -
+center, 3 vectors-a,b,c and associated constraints ). This data is
+stored as a pc_pc_set (ParameterConstraint Set) This way, after the
+implementation of libpc we can remove most of the code from existing
+rt</em>*_prep functions which do such implicit constraint checking
+handling the same via libpc</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Addition of rt_*_params to the RT_DECLARE_INTERFACE macro in
+table.c</p>
+</li>
+<li>
+<p>Addition to the functab table in table.c</p>
+</li>
+<li>
+<p>Definition of corresponding function is various primitives/*.c
+files</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>What should be the convention for naming the parameters ? Also there
+is a certain issue in the sense that some of the geometry are special
+cases of more generic geometry. So for a sphere we are concerned with
+only radius and center where as it is defined using ( point center) and
+3 vectors (a b c). Should we name the parameter radius make 3 fastf_t
+* to a[0], b[1], and c[2] Or should we make 3 vectp_t to a,b,c
+or make 1 fast_t</strong> to a[0], doing a further check/constraint that
+a[0]=b[1]=c[2] ?*</p>
+</div>
+<div class="paragraph">
+<p><em>[I think the naming convention should be as consistent as possible
+with the names used in the MGED user interface. For example, when a
+sphere is edited in MGED, the parameters available are V (the center),
+and 3 radius vectors (A, B, and C). Similarly, an RCC or TRC has all the
+parameters of a TGC. Note also that all objects in a BRL-CAD database
+file are accessed by unique names. A convention for producing unique
+names for the constraint objects is needed. Depending on how these
+constraint objects are accessed by a user, the names of the constraint
+objects might not ever need to exposed to the user. Objects in the
+database can be "hidden" so that they do not normally appear in
+listings] - JRA</em></p>
+</div>
+<div class="paragraph">
+<p>The datastructures necessary for the exchange of information
+(pc_pc_set which itself is built using a constraint set structure and
+parameter set structure) are defined currently in raytrace.h (Shift to
+pc.h in future? )</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_evaluation_system"><a class="anchor" href="#_evaluation_system"></a>Evaluation System</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>June 10th: The idea is to implement a constraint network using graph
+representation of boost c&#43;&#43; library. From the solvers point of view the
+constraint network would be composed of the following ( which are class
+definitions in pc_solver.h file)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constraint Network: A Graph composed of vertices being parameters
+and edges being constraint relations. The difference from the normal
+graph is in the sense that an edge (or hyperedge ) maybe connecting
+more than two vertices.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Parameter Object: Vertex of the graph:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pointers to various constraints it is connected to</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Constraint Object: Edge/Hyperedge of the graph - Relation
+between parameters</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pointers to the parameters int the particular relation</p>
+</li>
+<li>
+<p>Relation : Basic representation of the relationship</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Relation Stack : The stack based representation of the
+relationship</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The action of the Solver object/method is the production of a Solution
+Class A Solution is basically an instantiation of parameters along with
+their possible values or an instantiation of the form ( param1= value,
+param2=value and so on) In this case the value is basically a region of
+the domain the parameter could occupy.</p>
+</div>
+<div class="paragraph">
+<p>For example consider parameter set p1,p2,p3 The solution maybe</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>(p1, 0.5-1.5; p2, 0.2) : P3 can have any value if P2 =0.2 and P1
+lies in the range [0.1,1.5]</p>
+</li>
+<li>
+<p>(p1, 1.8; p2, 0.3-0.8; p3, 0.3-0.9) : P1=1.8, and P2 lies in the
+range [0.3,0.8] and P3 in the range [0.3,0.9]</p>
+</li>
+<li>
+<p>(p1, 2.3; p2, 2.2; p3, 1.4) : Unique solution P1=2.3, P2=2.2, P3=1.4</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_treatment_of_domain_of_parameters"><a class="anchor" href="#_treatment_of_domain_of_parameters"></a>Treatment of domain of parameters</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Option A: If a particular parameter has a domain(0.5&lt;x&lt;2.5)
+This can be viewed as the existance for two unary constraints on the
+parameter x ( x&gt;0.5 and x&lt;2.5 )</p>
+</li>
+<li>
+<p>Option B: Utilization of a Domain class which basically is dynamic
+array of individual domains ( by individual domain I imply a
+[min,max] region )</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transfer_of_data_from_database_to_solver"><a class="anchor" href="#_transfer_of_data_from_database_to_solver"></a>Transfer of data from database to solver</h3>
+<div class="paragraph">
+<p>Modus operandi:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import data and create pc_pc_set using rt_*_params functions
+via rt_functab</p>
+</li>
+<li>
+<p>Run a domain extractor on the constraint objects in pc_set</p>
+</li>
+<li>
+<p>Generate the constraint network</p>
+</li>
+<li>
+<p>Call Solver</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Initial draft/intent</p>
+</div>
+<div class="paragraph">
+<p><code>It would be ideal to provide both analytical and numeric evaluation methods the  second one being of</code>
+<code>primary importance in terms of constraint based  calculations. Considering the standard methods of</code>
+<code>parametrization ( see Enumeration below ) I  think the implementation of an analytic solving system `
+`would be easier. Though  for the solution of more complex equation as well as majority of constraints,</code>
+<code>libpg will have to provide support for numerical solutions.</code></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<script src="../ui/js/site.js"></script>
+<script async src="../ui/js/vendor/highlight.js"></script>
+<script src="../ui/js/vendor/lunr.js"></script>
+<script src="../ui/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../ui/css/search.css"></script>
+<script async src="../search-index.js"></script>
+
+<script async src="../ui/js/vendor/medium-zoom.min.js"></script>
+<script async src="../ui/js/medium-zoom.config.js"></script>
+  </body>
+</html>
