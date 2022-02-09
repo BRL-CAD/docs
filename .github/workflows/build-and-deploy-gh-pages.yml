@@ -5,7 +5,7 @@ name: Build and Deploy GitHub Pages
 on:
   push:
     branches:
-      - main-disabled     # Remove '-disabled' to activate this action
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
