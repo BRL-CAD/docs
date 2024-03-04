@@ -5,5 +5,5 @@
 inotifywait -qmr -e modify --exclude '\.?#.*' docs/ \
   | while read event; do
       echo $(date +'%F %T') $event
-      antora build-dev.yml
+      npx antora build-dev.yml
     done
