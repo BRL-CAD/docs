@@ -6,7 +6,7 @@
 +
 [source,bash]
 ....
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 source ~/.bashrc
 command -v nvm
 ....
@@ -17,15 +17,15 @@ command -v nvm
 ....
 nvm install --lts
 node --version
-nvm alias default 16
 ....
 
 . Get the code of the docs and install antora packages:
 +
 [source,bash]
 ....
-git clone https://github.com/BRL-CAD/brlcad-docs
-cd brlcad-docs/
+git clone https://github.com/BRL-CAD/docs
+cd docs/
+
 npm install
 npx antora -v
 ....
@@ -37,7 +37,7 @@ npx antora -v
   `npx antora build-dev.yml`
 
 - For the online site: +
-  `npx antora build.yml`
+  `CI=true npx antora build.yml`
 
 - For the offline site:
 +
